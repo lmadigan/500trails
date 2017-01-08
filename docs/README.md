@@ -1,1 +1,1 @@
-[Wireframes](docs/wireframes)
+[Wireframes](./wireframes)
