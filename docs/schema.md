@@ -23,8 +23,8 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key (will be referenced in cloudinary)
 trip_id     | integer   | not null, foreign key (references trip), indexed
-latitude    | integer   |
-longitude   | integer   |
+latitude    | float     |
+longitude   | float     |
 
 ## saved trips
 
