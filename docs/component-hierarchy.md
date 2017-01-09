@@ -71,5 +71,5 @@
 | "/userId" | "UserProfileContainer" |
 | "/userId/map" | "UserMapContainer" |
 | "/userId/saved-trips" | "SavedTripsContainer" |
-| "/tripId" | "TripIndexItemContainer" |
+| "/userId/tripId" | "TripIndexItemContainer" |
 | "userId/new-trip" | "NewTripContainer" |
