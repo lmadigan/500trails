@@ -44,12 +44,32 @@
   - Profile Nav Bar
   - User Profile Google Maps
 
-**New Trip Form Container**
+**New Trip Container**
   - Photo Upload Container
-    -Photo Upload Button
-    -Drag and Drop Photo Area(bonus)
+    - Photo Upload Button
+    - Drag and Drop Photo Area(bonus)
   - New Trip Form
     - Publish Trip Button
     - Title Text Box
     - Location Text Box
     - Description Text Area
+
+**Trip Index Item Container**
+  - Trip Index Item Photo
+  - Trip Details Container
+    - Trip Name
+    - Trip Location
+    - Description
+
+
+## Routes
+|Path   | Component   |
+|-------|-------------|
+| "/sign-up" | "AuthFormContainer" |
+| "/sign-in" | "AuthFormContainer" |
+| "/home" | "HomeContainer" |
+| "/userId" | "UserProfileContainer" |
+| "/userId/map" | "UserMapContainer" |
+| "/userId/saved-trips" | "SavedTripsContainer" |
+| "/tripId" | "TripIndexItemContainer" |
+| "userId/new-trip" | "NewTripContainer" |
