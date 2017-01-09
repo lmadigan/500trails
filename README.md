@@ -2,7 +2,7 @@
 
 [Heroku link] **Note:** This should be a link to your production site
 
-[Trello link][trello]
+[Trello link] [trello]
 
 [heroku]:
 [trello]: [https://trello.com/b/SeQI1hwv/500trails]
