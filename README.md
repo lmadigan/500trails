@@ -5,7 +5,7 @@
 [Trello link][trello]
 
 [heroku]:
-[trello]:
+[trello]: [https://trello.com/b/SeQI1hwv/500trails]
 
 ## Minimum Viable Product
 
