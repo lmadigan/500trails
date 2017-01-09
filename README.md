@@ -48,4 +48,3 @@ sufficient CSS styling:
 - [ ] Search Trip By Location
 - [ ] Multiple Photo Upload for trips
 - [ ] Drag and Drop Photo Upload
-- [ ]

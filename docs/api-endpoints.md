@@ -24,9 +24,3 @@
 - `POST /api/trips`
 - `GET /api/trips/:id`
 - `DELETE /api/trips/:id`
-
-### Saved Trips
-
-- `GET /api/users/:user_id/saved_trips`
-- `POST /api/users/:user_id/saved_trips`
-- `DELETE /api/users/:user_id/saved_trips/:id`
