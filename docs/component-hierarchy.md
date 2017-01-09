@@ -16,9 +16,6 @@
   - Log In Button
   - Sign Up Button
   - Demo Button
-
-**Logged In Header Container**
-  - Search
   - User Name
   - New Trip Button
 
@@ -27,10 +24,6 @@
   - Profile Stats Container
   - Profile Nav Bar
   - Trips Index
-
-**Profile Stats Container**
- - User Name
- - Avatar Photo
 
 **Saved Trips Container**
   - Logged In Header Container
@@ -68,8 +61,8 @@
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
 | "/home" | "HomeContainer" |
-| "/userId" | "UserProfileContainer" |
+| "/user/userId" | "UserProfileContainer" |
 | "/userId/map" | "UserMapContainer" |
 | "/userId/saved-trips" | "SavedTripsContainer" |
-| "/userId/tripId" | "TripIndexItemContainer" |
-| "userId/new-trip" | "NewTripContainer" |
+| "/trip/tripId" | "TripIndexItemContainer" |
+| "/new-trip" | "NewTripContainer" |

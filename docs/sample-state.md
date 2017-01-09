@@ -20,5 +20,11 @@
       location: "Yosemite National Park"
     }
   },
+  users: {
+    1: {
+      id: 1,
+      username: "lmadigan",
+    }
+  }
 }
 ```
