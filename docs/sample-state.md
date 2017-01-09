@@ -3,6 +3,7 @@
   currentUser: {
     id: 1,
     username: "lauren-madigan",
+    savedTrips: []
 
   },
   forms: {
