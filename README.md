@@ -17,7 +17,7 @@ sufficient CSS styling:
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Home Feed
-- [ ] Photo Upload for new trips
+- [ ] Photo upload for new trips
 - [ ] User Profile Page containing trips
 - [ ] Save other users' trips (follows)
 - [ ] Google Map containing locations of user's trips
@@ -45,7 +45,7 @@ sufficient CSS styling:
 
 
 ### Bonus Features (TBD)
-- [ ] Google Maps on homepage
-- [ ] Google Maps for User
-- [ ] Discover
-- [ ] Multiple sessions
+- [ ] Search Trip By Location
+- [ ] Multiple Photo Upload for trips
+- [ ] Drag and Drop Photo Upload
+- [ ]
