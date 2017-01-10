@@ -1,51 +1,26 @@
 ## Component Hierarchy
 
 **Auth Form Container**
-  - Header Container
   - AuthForm
 
-**Home Container**
-  - Header Container
+**Splash Container**
   - Discover Container
     - Discover Nav Bar
-    - Discover Google Maps
     - Discover Index
 
 **Header Container**
-  - Search
-  - Log In Button
-  - Sign Up Button
-  - Demo Button
-  - User Name
-  - New Trip Button
 
 **User Profile Container**
-  - Logged In Header Container
-  - Profile Stats Container
-  - Profile Nav Bar
   - Trips Index
 
-**Saved Trips Container**
-  - Logged In Header Container
-  - Profile Stats Container
-  - Profile Nav Bar
+**Home Feed Container**
+  - Trips Index
   - Saved Trips Index
-
-**User Map Container**
-  - Logged In Header Container
-  - Profile Stats Container
-  - Profile Nav Bar
-  - User Profile Google Maps
+  - Suggested Trips Index (bonus)
 
 **New Trip Container**
   - Photo Upload Container
-    - Photo Upload Button
-    - Drag and Drop Photo Area(bonus)
   - New Trip Form
-    - Publish Trip Button
-    - Title Text Box
-    - Location Text Box
-    - Description Text Area
 
 **Trip Index Item Container**
   - Trip Index Item Photo
@@ -60,9 +35,8 @@
 |-------|-------------|
 | "/sign-up" | "AuthFormContainer" |
 | "/sign-in" | "AuthFormContainer" |
-| "/home" | "HomeContainer" |
+| "/"        | "SplashContainer"   |
+| "/home"    | "HomeFeedContainer" |
 | "/user/userId" | "UserProfileContainer" |
-| "/userId/map" | "UserMapContainer" |
-| "/userId/saved-trips" | "SavedTripsContainer" |
 | "/trip/tripId" | "TripIndexItemContainer" |
 | "/new-trip" | "NewTripContainer" |
