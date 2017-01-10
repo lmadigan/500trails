@@ -38,5 +38,5 @@
 | "/"        | "SplashContainer"   |
 | "/home"    | "HomeFeedContainer" |
 | "/user/userId" | "UserProfileContainer" |
-| "/trip/tripId" | "TripIndexItemContainer" |
+| "/trips/tripId" | "TripIndexItemContainer" |
 | "/new-trip" | "NewTripContainer" |
