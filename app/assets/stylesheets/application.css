@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+.top-nav-header {
+  display: block;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.top-nav-header-items {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.500trails-nav-header {
+  display: flex
+}
+
+.personal-greeting {
+  dispaly: flex;
+}
+
+.welcome {
+  position: 20;
+}

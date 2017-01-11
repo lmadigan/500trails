@@ -2,7 +2,7 @@
 {
   currentUser: {
     id: 1,
-    username: "lauren-madigan",
+    user_name: "lauren-madigan",
     savedTrips: []
 
   },
@@ -23,7 +23,7 @@
   users: {
     1: {
       id: 1,
-      username: "lmadigan",
+      user_name: "lmadigan",
     }
   }
 }
