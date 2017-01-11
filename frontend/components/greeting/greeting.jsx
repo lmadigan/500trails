@@ -26,9 +26,12 @@ export default class Greeting extends React.Component {
   personalGreeting() {
     return (
       <nav className="right-nav">
-        <h2 className="header-name">{this.props.currentUser.user_name}</h2>
-        <h2><button className="header-button" onClick={this.props.logout}>Log Out</button></h2>
-        <h2><button>Add Trip</button></h2>
+        <ul>
+          <li className="header-name">{this.props.currentUser.user_name}</li>
+          <li><button className="header-button" onClick={this.props.logout}>Log Out</button></li>
+          <li><button>Add Trip</button></li>
+        </ul>
+
       </nav>
     );
   }

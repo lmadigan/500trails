@@ -1,9 +1,10 @@
 # 500trails
 
-[Heroku link] **Note:** This should be a link to your production site
+[Heroku link][heroku]
 
 [Trello link][trello]
 
+[heroku]: https://trails500.herokuapp.com
 [trello]: https://trello.com/b/SeQI1hwv/500trails
 
 ## Minimum Viable Product
