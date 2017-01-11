@@ -54,11 +54,16 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const sessionFormHeader = (this.props.formType === 'login' ? "Log In" : "Join Trails");
+    const sessionFormHeader = (this.props.formType === 'login' ?
+      "Log In to 500trails" : "Join 500trails");
     return (
       <div className='loggin-form-page'>
         <div className='inner-form'>
           <form onSubmit={this.handleSubmit} className='login-form'>
+            <div className="login-content">
+              <h1 className="sign-up">{sessionFormHeader}</h1>
+
+            </div>
             <div className="field-item">
               <label className="username">UserName:
                 <br/>
@@ -69,7 +74,7 @@ class SessionForm extends React.Component {
               </label>
             </div>
             <br/>
-            <div className='loggin-form-page'>
+            <div className="field-item">
               <label className="username">Password:
                 <br/>
                 <input type="password"
@@ -77,10 +82,12 @@ class SessionForm extends React.Component {
                   onChange={this.update("password")}
                   className='login-input'/>
               </label>
+              </div>
               <br/>
-              <input type="submit" value={this.props.formType}
-                className="submitButton"/>
-            </div>
+              <div className="field-item">
+                <input type="submit" value={this.props.formType}
+                  className="submitButton"/>
+              </div>
           </form>
         </div>
 

@@ -1,19 +1,7 @@
-button {
-	background-color: blue;
-	border-color: black;
-	color: white;
-	font-weight: bold;
-	padding: 7px 9px;
-	border-radius: 3px;
-	transition: background-color 0.3s;
-	text-transform: uppercase;
-	font-size: 11px;
-	text-align: center;
-}
+
 .loggin-form-page {
   display: flex;
   justify-content: center;
-  height: 600px;
 }
 .inner-form {
   display: flex;
@@ -43,24 +31,40 @@ button {
 }
 
 
-.sign-up-button {
-  background: green;
-  height: 100%;
-  text-align: center
-}
-
 .submitButton {
   color: white;
   background: green;
   padding: 7px;
   margin: 5px;
   font-size: 20;
+	display: inline-block;
+	width: 100%;
 }
 
 .headerName {
   display: block;;
 }
 
+.login-conent {
+	display: block;
+	height: 100px;
+	text-align: center;
+	width: 100%;
+	margin: 50px;
+	padding: 50px;
+}
+
 .username {
   padding-bottom: 5px;
+}
+
+.field-item {
+	display: block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.signup {
+	text-align: center;
+	padding-bottom: 50px;
 }
