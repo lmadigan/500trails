@@ -34,7 +34,7 @@ export default class Greeting extends React.Component {
     return (
       <div className="top-nav-header">
         <div className="top-nav-header-items">
-          <div className="500trails-nav-header">
+          <div className="F00trails-nav-header">
             <ul>
               <li>Trails</li>
               <li>Discover</li>
