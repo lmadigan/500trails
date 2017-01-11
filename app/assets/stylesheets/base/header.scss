@@ -1,0 +1,42 @@
+
+.top-nav-header {
+  position: absolute;
+  top:0;
+  width:100%;
+  min-width: 800px;
+  height:50px;
+  z-index:1000;
+  border-bottom: 1px solid #eeeff2;
+  display:flex;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+}
+
+.right-nav {
+  height: 100%;
+  text-align:center;
+}
+
+.left-nav > ul,
+.right-nav > ul {
+	display: flex;
+	align-items: center;
+  text-align: center;
+  height: 100%
+}
+
+.left-nav ul li {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.right-nav ul li {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.login-input {
+  border: grey solid 1px;
+}

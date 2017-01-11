@@ -10,42 +10,44 @@ export default class Greeting extends React.Component {
 
   sessionLinks() {
     return (
-      <nav className="login-signup">
-        <Link to="/demo" activeClassName="current"><button>Demo</button></Link>
-        <Link to="/login" activeClassName="current"><button>Log In</button></Link>
-        &nbsp;or&nbsp;
-        <Link to="/signup" activeClassName="current"><button>Sign Up!</button></Link>
+      <nav className="right-nav">
+        <ul>
+          <li><Link to="/demo">DEMO</Link></li>
+          <li><Link to="/login">LOG IN</Link></li>
+          <li className="sign-up-button"><Link to="/signup">SIGN UP!</Link></li>
+        </ul>
+
+
+
       </nav>
     );
   }
 
   personalGreeting() {
     return (
-      <hgroup className="header-group">
+      <nav className="right-nav">
         <h2 className="header-name">{this.props.currentUser.user_name}</h2>
-        <button className="header-button" onClick={this.props.logout}>Log Out</button>
-        <button>Add Trip</button>
-      </hgroup>
+        <h2><button className="header-button" onClick={this.props.logout}>Log Out</button></h2>
+        <h2><button>Add Trip</button></h2>
+      </nav>
     );
   }
 
   render () {
     let personalGreeting = this.props.currentUser ? this.personalGreeting() : this.sessionLinks();
     return (
-      <div className="top-nav-header">
-        <div className="top-nav-header-items">
-          <div className="F00trails-nav-header">
-            <ul>
-              <li>Trails</li>
-              <li>Discover</li>
-              <li>Loations</li>
-            </ul>
-          </div>
-          <div className="personal-greeting">
-            {personalGreeting}
-          </div>
-        </div>
-      </div>
+      <header className="top-nav-header">
+        <nav className="left-nav">
+          <ul className="F00trails-nav-header">
+            <li>500Trails</li>
+            <li>Discover</li>
+            <li>Loations</li>
+          </ul>
+        </nav>
+        <nav className="right-nav">
+          {personalGreeting}
+        </nav>
+      </header>
     );
   }
 }

@@ -56,33 +56,33 @@ class SessionForm extends React.Component {
   render() {
     const sessionFormHeader = (this.props.formType === 'login' ? "Log In" : "Join Trails");
     return (
-      <div className='loggin-form-container'>
-        <header className='loggin-form-header'>
-          <div>
-            <div className='login-error-messages'>{this.renderErrorMessages()}</div>
-            {this.otherForm()}
-          </div>
-        </header>
-        <h1>{sessionFormHeader}</h1>
-        <form onSubmit={this.handleSubmit} className='login-form'>
-          <label>UserName:
+      <div className='loggin-form-page'>
+        <div className='inner-form'>
+          <form onSubmit={this.handleSubmit} className='login-form'>
+            <div className="field-item">
+              <label className="username">UserName:
+                <br/>
+                <input type="text"
+                  value={this.state.user_name}
+                  onChange={this.update("user_name")}
+                  className='login-input'/>
+              </label>
+            </div>
             <br/>
-            <input type="text"
-              value={this.state.user_name}
-              onChange={this.update("user_name")}
-              className='login-input'/>
-          </label>
-          <br/>
-          <label>Password:
-            <br/>
-            <input type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              className='login-input'/>
-          </label>
-          <br/>
-          <input type="submit" value={this.props.formType}/>
-        </form>
+            <div className='loggin-form-page'>
+              <label className="username">Password:
+                <br/>
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className='login-input'/>
+              </label>
+              <br/>
+              <input type="submit" value={this.props.formType}
+                className="submitButton"/>
+            </div>
+          </form>
+        </div>
 
       </div>
     );
@@ -92,3 +92,12 @@ class SessionForm extends React.Component {
 
 export default withRouter(SessionForm);
 //withRouter allows for
+
+
+// <header className='loggin-form-header'>
+//   <div>
+//     <div className='login-error-messages'>{this.renderErrorMessages()}</div>
+//     {this.otherForm()}
+//   </div>
+// </header>
+// <h1 className='headerName'>{sessionFormHeader}</h1>
