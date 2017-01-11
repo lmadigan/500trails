@@ -1,15 +1,11 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    user_name: "lauren-madigan",
-    savedTrips: []
-
-  },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []},
-    newTrip: {errors: []}
+  session: {
+    currentUser: {
+      id: 1,
+      user_name: "lauren-madigan"
+    },
+    errors: []
   },
   trips: {
     1: {

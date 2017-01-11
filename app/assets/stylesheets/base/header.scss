@@ -12,10 +12,6 @@
 	border-bottom: 1px solid gray;
 }
 
-.right-nav {
-  height: 100%;
-  text-align:center;
-}
 
 .left-nav > ul,
 .right-nav > ul {
@@ -28,12 +24,13 @@
 .left-nav ul li {
   padding-left: 15px;
   padding-right: 15px;
+  text-align: center;
 }
 
 .right-nav ul li {
-  text-align: center;
   padding-left: 15px;
   padding-right: 15px;
+  text-align: center;
 }
 
 

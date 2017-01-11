@@ -16,9 +16,6 @@ export default class Greeting extends React.Component {
           <li><Link to="/login">LOG IN</Link></li>
           <li className="sign-up-button"><Link to="/signup">SIGN UP!</Link></li>
         </ul>
-
-
-
       </nav>
     );
   }
@@ -47,9 +44,7 @@ export default class Greeting extends React.Component {
             <li>Loations</li>
           </ul>
         </nav>
-        <nav className="right-nav">
           {personalGreeting}
-        </nav>
       </header>
     );
   }
