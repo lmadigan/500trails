@@ -1,70 +1,112 @@
 
 .loggin-form-page {
+  position: fixed;
+  top:0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #E9E9EA;
+  display: flex;
+}
+
+.login-form-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 50px;
   display: flex;
   justify-content: center;
 }
+
 .inner-form {
   display: flex;
   justify-content: center;
-  border: grey solid 1px;
-  margin-top: 40px;
+  background-color: white;
+  top: 40px;
+  vertical-align: middle;
   padding-top: 20px;
   width: 300px;
-  height: 430px;
+  height: 400px;
+  padding: 32px 40px 24px;
+  color: #71767a;
 }
-.loggin-form-container {
-  margin-top: 20px;
-  padding-top: 150px;
-  border: grey;
-  width: 400px;
-  height: 600px;
 
-}
 
 .loggin-form {
   position: absolute;
   border: grey solid 1px;
   width: 400px;
-  height: 600px;
+  height: 400px;
   background: green;
   margin-top: 50px;
 }
 
+.login-header {
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 30px;
+  font-size: x-large;
+}
 
 .submitButton {
   color: white;
   background: green;
   padding: 7px;
-  margin: 5px;
   font-size: 20;
 	text-align: center;
 	width: 88%;
 }
 
-.headerName {
-  display: block;;
-}
 
 .login-conent {
 	display: block;
 	height: 100px;
 	text-align: center;
 	width: 100%;
-	margin: 50px;
 	padding: 50px;
+
 }
 
-.username {
-  padding-bottom: 5px;
+.login-input {
+  padding: 7px;
 }
 
 .field-item {
 	display: block;
 	padding-right: 5px;
 	padding-left: 5px;
+  text-align: center;
+}
+
+.field-item label {
+  text-align: left;
 }
 
 .signup {
 	text-align: center;
 	padding-bottom: 50px;
+}
+
+.username {
+  color: #71767a;
+  text-align: right;
+  font-size: 14px;
+}
+
+.login-error-bar {
+  position: absolute;
+  z-index: 20000;
+  top:0;
+  height: 30px;
+  background-color: #FB9A9A;
+  border-radius: 5px;
+  color: white;
+  font-size: 12px;
+  margin: 10px;
+  vertical-align: middle;
+
+}
+
+input {
+  background-color: white;
 }

@@ -6,15 +6,25 @@ export default class Greeting extends React.Component {
     super(props);
     this.sessionLinks.bind(this);
     this.personalGreeting.bind(this);
+    this.state = {
+        user_name: "guest",
+        password: "password123"
+    };
+  }
+
+  loginGuest() {
+    const user = Object.assign({}, this.state);
+    this.props.login({user});
   }
 
   sessionLinks() {
     return (
       <nav className="right-nav">
         <ul>
-          <li><Link to="/demo">DEMO</Link></li>
+          <li><button className="demo-button"
+              onClick={() => this.loginGuest()}>DEMO</button></li>
           <li><Link to="/login">LOG IN</Link></li>
-          <li className="sign-up-button"><Link to="/signup">SIGN UP!</Link></li>
+          <li className="sign-up-button"><Link to="/signup">SIGN UP</Link></li>
         </ul>
       </nav>
     );
@@ -39,9 +49,9 @@ export default class Greeting extends React.Component {
       <header className="top-nav-header">
         <nav className="left-nav">
           <ul className="F00trails-nav-header">
-            <li>500Trails</li>
-            <li>Discover</li>
-            <li>Loations</li>
+            <li><Link to="/">500Trails</Link></li>
+            <li>DISCOVER</li>
+            <li>LOCATION</li>
           </ul>
         </nav>
           {personalGreeting}
@@ -49,18 +59,3 @@ export default class Greeting extends React.Component {
     );
   }
 }
-
-
-//   personalGreeting(currentUser, logout) {
-//     return (
-//       <hgroup className="header-group">
-//         <h2 className="header-name">Hi, {currentUser.user_name}!</h2>
-//         <button className="header-button" onClick={logout}>Log Out</button>
-//       </hgroup>
-//     )
-//   }
-// const Greeting = ({currentUser, logout}) => (
-//   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-// );
-//
-// export default Greeting;

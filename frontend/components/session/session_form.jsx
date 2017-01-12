@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Greeting from '../greeting/greeting_container';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class SessionForm extends React.Component {
     }
 
   renderErrorMessages() {
-    if (this.state.errors) {
+    if (this.props.errors) {
       return(
         <ul>
           {this.props.errors.map((error, ind) => (
@@ -56,40 +57,46 @@ class SessionForm extends React.Component {
   render() {
     const sessionFormHeader = (this.props.formType === 'login' ?
       "Log In to 500trails" : "Join 500trails");
+    const errors = this.renderErrorMessages();
     return (
       <div className='loggin-form-page'>
-        <div className='inner-form'>
-          <form onSubmit={this.handleSubmit} className='login-form'>
-            <div className="login-content">
-              <h1 className="sign-up">{sessionFormHeader}</h1>
+        < Greeting />
+        <section className="login-form-wrapper">
+          <section className="login-error-bar">{errors}</section>
+          <div className='inner-form'>
+            <form onSubmit={this.handleSubmit} className='login-form'>
+              <div className="login-content">
+                <h1 className="login-header">{sessionFormHeader}</h1>
 
-            </div>
-            <div className="field-item">
-              <label className="username">UserName:
-                <br/>
-                <input type="text"
-                  value={this.state.user_name}
-                  onChange={this.update("user_name")}
-                  className='login-input'/>
-              </label>
-            </div>
-            <br/>
-            <div className="field-item">
-              <label className="username">Password:
-                <br/>
-                <input type="password"
-                  value={this.state.password}
-                  onChange={this.update("password")}
-                  className='login-input'/>
-              </label>
+              </div>
+              <div className="field-item">
+                <label className="username">UserName:
+                  <br/>
+                  <input type="text"
+                    value={this.state.user_name}
+                    onChange={this.update("user_name")}
+                    className='login-input'/>
+                </label>
               </div>
               <br/>
               <div className="field-item">
-                <input type="submit" value={this.props.formType}
-                  className="submitButton"/>
-              </div>
-          </form>
-        </div>
+                <label className="username">Password:
+                  <br/>
+                  <input type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    className='login-input'/>
+                </label>
+                </div>
+                <br/>
+                <div className="field-item">
+                  <input type="submit" value={this.props.formType}
+                    className="submitButton"/>
+                </div>
+            </form>
+          </div>
+        </section>
+
 
       </div>
     );
@@ -98,13 +105,3 @@ class SessionForm extends React.Component {
 }
 
 export default withRouter(SessionForm);
-//withRouter allows for
-
-
-// <header className='loggin-form-header'>
-//   <div>
-//     <div className='login-error-messages'>{this.renderErrorMessages()}</div>
-//     {this.otherForm()}
-//   </div>
-// </header>
-// <h1 className='headerName'>{sessionFormHeader}</h1>
