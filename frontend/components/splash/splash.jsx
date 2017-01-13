@@ -17,5 +17,3 @@ export default class Splash extends React.Component {
     );
   }
 }
-
-// <h3 className="splash-photo-h3">Search, share, and save your next adventure</h3>
