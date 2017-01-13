@@ -12,10 +12,9 @@
  *
 
  *= require_self
- *= require_tree
  */
 
-/*@import "base/reset.scss";
+@import "base/reset.scss";
 @import "base/header.scss";
 @import "base/auth.scss";
-@import "api/trips.scss";*/
+@import "api/trips.scss";
