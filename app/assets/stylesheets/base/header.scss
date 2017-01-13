@@ -1,116 +1,116 @@
-
-.top-nav-header {
-  position: fixed;
-  top:0;
-  width:100%;
-  min-width: 800px;
-  height:50px;
-  z-index:1000;
-  border-bottom: 1px solid #A5A4A4;
-  display:flex;
-	justify-content: space-between;
-	// border-bottom: 1px solid gray;
-  background-color: white;
-}
-
-.left-nav,
-.right-nav {
-  height: 100%;
-}
-.left-nav > ul,
-.right-nav > ul {
-	display: flex;
-	align-items: center;
-  text-align: center;
-  height: 100%;
-  padding-right: 50px;
-  font-family: 'Lato', sans-serif;
-}
-
-
-.left-nav ul li:hover {
-  color: #0099e5;
-}
-
-.right-nav ul:hover {
-  color: #0099e5;
-}
-
-.demo-button:hover,
-.login-button:hover {
-  color: #0099e5;
-}
+// 
+// .top-nav-header {
+//   position: fixed;
+//   top:0;
+//   width:100%;
+//   min-width: 800px;
+//   height:50px;
+//   z-index:1000;
+//   border-bottom: 1px solid #A5A4A4;
+//   display:flex;
+// 	justify-content: space-between;
+// 	// border-bottom: 1px solid gray;
+//   background-color: white;
+// }
 //
-// .right-nav ul li:hover {
+// .left-nav,
+// .right-nav {
+//   height: 100%;
+// }
+// .left-nav > ul,
+// .right-nav > ul {
+// 	display: flex;
+// 	align-items: center;
+//   text-align: center;
+//   height: 100%;
+//   padding-right: 50px;
+//   font-family: 'Lato', sans-serif;
+// }
+//
+//
+// .left-nav ul li:hover {
 //   color: #0099e5;
 // }
-// .right-nav ul li button:hover {
+//
+// .right-nav ul:hover {
 //   color: #0099e5;
 // }
-
-
-.left-nav ul li {
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-}
-
-.right-nav ul li {
-  padding-left: 15px;
-  padding-right: 15px;
-  text-align: center;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
 //
+// .demo-button:hover,
 // .login-button:hover {
-//   background: #34bf49;
-//   color: white;
+//   color: #0099e5;
 // }
-
-// .login-button: hover
+// //
+// // .right-nav ul li:hover {
+// //   color: #0099e5;
+// // }
+// // .right-nav ul li button:hover {
+// //   color: #0099e5;
+// // }
 //
 //
-// .sign-up:hover {
-//   background: #34bf49;
+// .left-nav ul li {
+//   padding-left: 15px;
+//   padding-right: 15px;
+//   text-align: center;
+// }
+//
+// .right-nav ul li {
+//   padding-left: 15px;
+//   padding-right: 15px;
+//   text-align: center;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+// }
+// //
+// // .login-button:hover {
+// //   background: #34bf49;
+// //   color: white;
+// // }
+//
+// // .login-button: hover
+// //
+// //
+// // .sign-up:hover {
+// //   background: #34bf49;
+// //   color: white;
+// // }
+//
+// .left-nav ul {
+//   margin-left: 40px;
+// }
+//
+//
+// .login-input {
+//   border: grey solid 1px;
+// }
+//
+// .splash-container-photo {
+//   background: image-url('waterfall2.jpg');
+//   background-size: 1300px;
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   text-align: center;
+//   top:0;
+//   width: 100%;
+//   height: 600px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//
+// }
+//
+// .splash-photo-writing {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   color: white;
+//   font-family: 'Lato', sans-serif;
+//   font-size: 35px;
+// }
+//
+// .splash-photo-writing h1 {
 //   color: white;
 // }
-
-.left-nav ul {
-  margin-left: 40px;
-}
-
-
-.login-input {
-  border: grey solid 1px;
-}
-
-.splash-container-photo {
-  background: image-url('waterfall2.jpg');
-  background-size: 1300px;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-  top:0;
-  width: 100%;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.splash-photo-writing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-  font-family: 'Lato', sans-serif;
-  font-size: 35px;
-}
-
-.splash-photo-writing h1 {
-  color: white;
-}
