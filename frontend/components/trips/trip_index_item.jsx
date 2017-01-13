@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router';
 import {merge } from 'lodash';
 
-export default class TripIndexItem extends React.Component {
+class TripIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = merge({title: "",
       description: "",
+      location: "",
       user_id: "",
       image_url: ""}, this.props.trip);
 
@@ -19,9 +20,31 @@ export default class TripIndexItem extends React.Component {
         user_id: ""}, this.props.trip)));
   }
 
+  deleteTrip() {
+    this.props.deleteTrip(this.props.tripId);
+  }
+
+  deleteButton() {
+    if (this.props.currentUser !== null &&
+      this.props.currentUser.id === this.state.user_id) {
+        return (
+          <div className="trip-index-item-box">
+            <div className="delte-button-box">
+              <button className="delete-button">Delete Trip</button>
+            </div>
+          </div>
+        );
+      } else {
+        return (
+          <div></div>
+        );
+      }
+  }
+
   render() {
     console.log(this.props);
     console.log(this.state);
+    const deleteButton =  this.deleteButton();
       return (
         <div className="trip-index-item-container">
           <section className="trip-index-item-wrapper">
@@ -48,6 +71,7 @@ export default class TripIndexItem extends React.Component {
                     <h1>{this.state.description}</h1>
                   </div>
                 </div>
+                {deleteButton}
               </div>
             </div>
           </section>
@@ -57,3 +81,5 @@ export default class TripIndexItem extends React.Component {
       );
   }
 }
+
+export default TripIndexItem;

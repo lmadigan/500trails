@@ -26,7 +26,7 @@ export default class Greeting extends React.Component {
           <li><button className="demo-button"
               onClick={() => this.loginGuest()}>DEMO</button></li>
             <li className="login-button"><Link to="/login">LOG IN</Link></li>
-          <li className="sign-up-button"><Link to="/signup" className="sign-up-button">SIGN UP</Link></li>
+          <li className="sign-up-button"><Link to="/signup">SIGN UP</Link></li>
         </ul>
       </nav>
     );

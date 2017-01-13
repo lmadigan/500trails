@@ -1,7 +1,6 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
-import Splash from './splash/splash';
 
 
 const App = (props) => (
@@ -12,5 +11,3 @@ const App = (props) => (
 );
 
 export default App;
-
-// <Splash />
