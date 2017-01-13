@@ -58,17 +58,20 @@
   padding-left: 15px;
   padding-right: 15px;
   text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.right-nav ul li:hover {
+  background: green; 
 }
 
 
 .left-nav ul {
   margin-left: 40px;
 }
-
-// .sign-up-button:hover {
-//   background-color: green;
-// }
 
 
 .login-input {
