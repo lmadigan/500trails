@@ -60,7 +60,6 @@ class SessionForm extends React.Component {
     const errors = this.renderErrorMessages();
     return (
       <div className='loggin-form-page'>
-        < Greeting />
         <section className="login-form-wrapper">
           <section className="login-error-bar">{errors}</section>
           <div className='inner-form'>

@@ -13,7 +13,7 @@
   position: relative;
   height: 100%;
   width: 100%;
-  top: 50px;
+  top: 70px;
   display: flex;
   justify-content: center;
 }
@@ -22,13 +22,14 @@
   display: flex;
   justify-content: center;
   background-color: white;
-  top: 40px;
+  top: 80px;
   vertical-align: middle;
-  padding-top: 20px;
+  padding-top: 70px;
   width: 300px;
-  height: 400px;
+  height: 450px;
   padding: 32px 40px 24px;
   color: #71767a;
+  box-shadow: 2px 2px 8px -1px rgba(94,94,94,1);
 }
 
 
@@ -38,7 +39,7 @@
   width: 400px;
   height: 400px;
   background: green;
-  margin-top: 50px;
+  margin-top: 70px;
 }
 
 .login-header {
@@ -55,6 +56,13 @@
   font-size: 20;
 	text-align: center;
 	width: 88%;
+  border-radius: 3px;
+  padding-right: 2px;
+}
+
+.submitButton:hover {
+  background-color: #1AB55D;
+  border: green 1px solid;
 }
 
 
@@ -98,7 +106,7 @@
   z-index: 20000;
   top:0;
   height: 30px;
-  background-color: #FB9A9A;
+  background-color: #F2495A;
   border-radius: 5px;
   color: white;
   font-size: 12px;
@@ -109,4 +117,8 @@
 
 input {
   background-color: white;
+}
+
+input:hover {
+  border: blue solid 1px;
 }

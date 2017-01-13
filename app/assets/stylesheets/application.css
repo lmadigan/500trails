@@ -13,5 +13,8 @@
 
  *= require_self
  */
+
 @import "base/reset.scss";
 @import "base/header.scss";
+@import "base/auth.scss";
+@import "api/trips.scss"

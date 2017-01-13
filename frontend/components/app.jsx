@@ -4,12 +4,13 @@ import SessionFormContainer from './session/session_form_container';
 import Splash from './splash/splash';
 
 
-const App = ({ children }) => (
+const App = (props) => (
   <div>
-      <GreetingContainer />
-      < Splash />
-      { children }
+      <GreetingContainer location={props.location}/>
+      { props.children }
   </div>
 );
 
 export default App;
+
+// <Splash />

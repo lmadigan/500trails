@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dtnwzbeum
+  api_key: '278882676555496'
+  api_secret: m0Ij5aMd0WH56PkK9khuBsUkSeE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dtnwzbeum
+  api_key: '278882676555496'
+  api_secret: m0Ij5aMd0WH56PkK9khuBsUkSeE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dtnwzbeum
+  api_key: '278882676555496'
+  api_secret: m0Ij5aMd0WH56PkK9khuBsUkSeE
+  enhance_image_tag: true
+  static_image_support: false

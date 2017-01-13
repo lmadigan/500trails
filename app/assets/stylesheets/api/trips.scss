@@ -1,0 +1,32 @@
+// Place all the styles related to the api/trips controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.trip-index-item-container {
+  top:0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #E9E9EA;
+}
+
+
+.trip-index-item-wrapper {
+  margin: 0 auto;
+  margin-top: 70px;
+  display: flex;
+  height: 500px;
+}
+
+.trip-index-item-photo-wrapper {
+  width: 65%;
+  min-width: 400px;
+  float: right;
+  background: green;
+}
+
+.trip-index-item-details {
+  width: 320px;
+  float: left;
+}

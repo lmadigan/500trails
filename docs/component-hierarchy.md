@@ -37,6 +37,6 @@
 | "/sign-in" | "AuthFormContainer" |
 | "/"        | "SplashContainer"   |
 | "/home"    | "HomeFeedContainer" |
-| "/user/userId" | "UserProfileContainer" |
+| "/users/userId" | "UserProfileContainer" |
 | "/trips/tripId" | "TripIndexItemContainer" |
 | "/new-trip" | "NewTripContainer" |

@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 export default class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.sessionLinks.bind(this);
     this.personalGreeting.bind(this);
+    this.signupLink.bind(this);
+    this.loginLink.bind(this);
     this.state = {
         user_name: "guest",
         password: "password123"
@@ -23,7 +25,30 @@ export default class Greeting extends React.Component {
         <ul>
           <li><button className="demo-button"
               onClick={() => this.loginGuest()}>DEMO</button></li>
-          <li><Link to="/login">LOG IN</Link></li>
+            <li className="login-button"><Link to="/login">LOG IN</Link></li>
+          <li ><Link to="/signup" className="sign-up-button">SIGN UP</Link></li>
+        </ul>
+      </nav>
+    );
+  }
+  loginLink() {
+    return (
+      <nav className="right-nav">
+        <ul>
+          <li><button className="demo-button"
+              onClick={() => this.loginGuest()}>DEMO</button></li>
+            <li className="login-button"><Link to="/login">LOG IN</Link></li>
+        </ul>
+      </nav>
+    );
+  }
+
+  signupLink() {
+    return (
+      <nav className="right-nav">
+        <ul>
+          <li><button className="demo-button"
+              onClick={() => this.loginGuest()}>DEMO</button></li>
           <li className="sign-up-button"><Link to="/signup">SIGN UP</Link></li>
         </ul>
       </nav>
@@ -44,7 +69,17 @@ export default class Greeting extends React.Component {
   }
 
   render () {
-    let personalGreeting = this.props.currentUser ? this.personalGreeting() : this.sessionLinks();
+    let personalGreeting = "";
+    if ( this.props.currentUser ) {
+      personalGreeting = this.personalGreeting();
+    } else if (this.props.location.pathname === "/login") {
+      personalGreeting = this.signupLink();
+    } else if (this.props.location.pathname === "/signup") {
+      personalGreeting = this.loginLink();
+    } else {
+      personalGreeting = this.sessionLinks();
+    }
+
     return (
       <header className="top-nav-header">
         <nav className="left-nav">
