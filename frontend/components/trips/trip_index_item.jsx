@@ -26,17 +26,27 @@ export default class TripIndexItem extends React.Component {
         <div className="trip-index-item-container">
           <section className="trip-index-item-wrapper">
             <div className="trip-index-item-photo-wrapper">
-              PHOTO
               <img src={this.state.image_url}/>
             </div>
             <div className="trip-index-item-details">
               <div className="trip-index-item-writing">
-                <div className="trip-index-item-user"></div>
-                <div className="trip-index-item-title">
-                  <h1>{this.state.title}</h1>
+                <div className="trip-index-item-box">
+                  <div className="trip-index-item-user">
+                    User Info Goes Here
+                  </div>
                 </div>
-                <div className="trip-index-item-description">
-                  <h1>{this.state.description}</h1>
+                <div className="trip-index-item-box">
+                  <div className="trip-index-item-title">
+                    <h1>{this.state.title}</h1>
+                  </div>
+                </div>
+                <div className="trip-index-item-box">
+                  <div className="trip-location">LOCATION</div>
+                  </div>
+                <div className="trip-index-item-box">
+                  <div className="trip-index-item-description">
+                    <h1>{this.state.description}</h1>
+                  </div>
                 </div>
               </div>
             </div>
