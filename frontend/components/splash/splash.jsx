@@ -11,6 +11,7 @@ export default class Splash extends React.Component {
       <div className="splash-container-photo">
         <div className="splash-photo-writing">
           <h1 className="splash-photo-h1">Home to everyone's favorite places</h1>
+          HIIIIII
         </div>
       </div>
     );
