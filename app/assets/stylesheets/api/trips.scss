@@ -1,82 +1,82 @@
-// Place all the styles related to the api/trips controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-.trip-index-item-container {
-  top:0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  // background-color: #E9E9EA;
-  display: flex;
-  justify-content: center;
-}
-
-
-.trip-index-item-wrapper {
-  margin: 0 auto;
-  margin-top: 70px;
-  border-radius: 3px;
-  display: flex;
-  height: 540px;
-  max-width: 1200px;
-  box-shadow: -1px 2px 17px -2px rgba(0,0,0,0.75);
-}
-
-.trip-index-item-photo-wrapper {
-  width: 65%;
-  min-width: 400px;
-  max-height: 600px;
-  float: right;
-  margin-top: 12px;
-  margin-bottom: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.trip-index-item-photo-wrapper img {
-  max-height: 541px;
-}
-
-
-.trip-index-item-details {
-  width: 320px;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  // justify-content: center;
-  max-height: 600px;
-  border-left: #DFDFDF 1px solid;
-}
-
-.trip-index-item-writing {
-  border-radius: 3px;
-  margin-bottom: 25px;
-  margin-top: 27px;
-  max-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.trip-index-item-box {
-  border-bottom: #DFDFDF 1px solid;
-}
-
-.trip-index-item-user {
-  padding: 20px;
-}
-
-.trip-index-item-title {
-  padding: 20px;
-}
-
-.trip-location {
-  padding: 20px;
-}
-
-.trip-index-item-description {
-  padding: 20px;
-}
+// // Place all the styles related to the api/trips controller here.
+// // They will automatically be included in application.css.
+// // You can use Sass (SCSS) here: http://sass-lang.com/
+//
+//
+// .trip-index-item-container {
+//   top:0;
+//   bottom: 0;
+//   height: 100%;
+//   width: 100%;
+//   // background-color: #E9E9EA;
+//   display: flex;
+//   justify-content: center;
+// }
+//
+//
+// .trip-index-item-wrapper {
+//   margin: 0 auto;
+//   margin-top: 70px;
+//   border-radius: 3px;
+//   display: flex;
+//   height: 540px;
+//   max-width: 1200px;
+//   box-shadow: -1px 2px 17px -2px rgba(0,0,0,0.75);
+// }
+//
+// .trip-index-item-photo-wrapper {
+//   width: 65%;
+//   min-width: 400px;
+//   max-height: 600px;
+//   float: right;
+//   margin-top: 12px;
+//   margin-bottom: 12px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+// }
+//
+// .trip-index-item-photo-wrapper img {
+//   max-height: 541px;
+// }
+//
+//
+// .trip-index-item-details {
+//   width: 320px;
+//   float: left;
+//   display: flex;
+//   flex-direction: column;
+//   // justify-content: center;
+//   max-height: 600px;
+//   border-left: #DFDFDF 1px solid;
+// }
+//
+// .trip-index-item-writing {
+//   border-radius: 3px;
+//   margin-bottom: 25px;
+//   margin-top: 27px;
+//   max-height: 500px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-start;
+// }
+//
+// .trip-index-item-box {
+//   border-bottom: #DFDFDF 1px solid;
+// }
+//
+// .trip-index-item-user {
+//   padding: 20px;
+// }
+//
+// .trip-index-item-title {
+//   padding: 20px;
+// }
+//
+// .trip-location {
+//   padding: 20px;
+// }
+//
+// .trip-index-item-description {
+//   padding: 20px;
+// }
