@@ -32,12 +32,12 @@ class Api::TripsController < ApplicationController
   end
 
   def show
-    @trip = Trip.find(params[:id])
+    @trip = Trip.includes(:user, :images).find(params[:id])
   end
 
   private
 
   def trip_params
-    params.require(:trip).permit(:title, :description, :user_id, :location, :image_url)
+    params.require(:trip).permit(:title, :description, :user_id, :location)
   end
 end

@@ -17,7 +17,7 @@ export const createTrip = (trip) => {
   return $.ajax({
     method: "POST",
     url: "api/trips",
-    data: {trip}
+    data: trip
   });
 };
 
@@ -25,5 +25,13 @@ export const deleteTrip = (trip_id) => {
   return $.ajax({
     method: "DELETE",
     url: `api/trips/${trip_id}`
+  });
+};
+
+export const createImage = (image) => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/images',
+    data: {image}
   });
 };

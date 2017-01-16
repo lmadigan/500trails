@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import SessionFormContainer from './session/session_form_container';
 import Splash from './splash/splash';
 import TripIndexItemContainer from './trips/trip_index_item_container';
+import TripFormContainer from './trips/trip_form_container';
 
 const Root = ({ store }) => (
   <Provider store={ store }>
@@ -13,6 +14,7 @@ const Root = ({ store }) => (
         <IndexRoute component={Splash}/>
         <Route path="login" component={ SessionFormContainer } />
         <Route path="signup" component={ SessionFormContainer } />
+        <Route path="trips/new" component={TripFormContainer} />
         <Route path="trips/:tripId" component={TripIndexItemContainer}/>
       </Route>
     </Router>

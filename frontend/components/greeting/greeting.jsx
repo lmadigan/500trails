@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Modal from 'react-modal';
+import { customStyles } from './modal_style';
+import TripForm from '../trips/trip_form';
 
 export default class Greeting extends React.Component {
   constructor(props) {
@@ -8,14 +11,33 @@ export default class Greeting extends React.Component {
     this.personalGreeting.bind(this);
     this.signupLink.bind(this);
     this.loginLink.bind(this);
+    this._handleClick = this._handleClick.bind(this);
+    this._onModalClose = this._onModalClose.bind(this);
     this.state = {
+      guest: {
         user_name: "guest",
         password: "password123"
+      },
+      modalOpen: false
+      // newTrip: false
     };
   }
 
+  _handleClick(form) {
+    this.setState({ modalOpen: true });
+  }
+
+  _onModalClose() {
+    this.setState({modalOpen: false });
+    customStyles.content.opacity = 0;
+  }
+
+  onModalOpen() {
+    customStyles.content.opacity = 100;
+  }
+
   loginGuest() {
-    const user = Object.assign({}, this.state);
+    const user = Object.assign({}, this.state.guest);
     this.props.login({user});
   }
 
@@ -61,7 +83,7 @@ export default class Greeting extends React.Component {
         <ul>
           <li className="header-name">{this.props.currentUser.user_name}</li>
           <li><button className="header-button" onClick={this.props.logout}>Log Out</button></li>
-          <li><button>Add Trip</button></li>
+          <li><button onClick={this._handleClick}>Add Trip</button></li>
         </ul>
 
       </nav>
@@ -69,6 +91,7 @@ export default class Greeting extends React.Component {
   }
 
   render () {
+
     let personalGreeting = "";
     if ( this.props.currentUser ) {
       personalGreeting = this.personalGreeting();
@@ -90,7 +113,19 @@ export default class Greeting extends React.Component {
           </ul>
         </nav>
           {personalGreeting}
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={this._onModalClose}
+            style={customStyles}
+            onAfterOpen={this.onModalOpen}>
+            <TripForm />
+          <br/>
+          </Modal>
       </header>
     );
   }
 }
+
+
+
+// <button onClick={this._onModalClose}>CLOSE</button>

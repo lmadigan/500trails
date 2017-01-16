@@ -11,4 +11,8 @@ Trip.create(title: "Cala Capreria, Sicilia", description:"Part of Sicily's first
 this trail was a
 glimpse at natural beauty of Sicily. About a
 mile-long hike led to this hidden beach with crystal
-clear turquoise waters.", location:"Sicily, Italy", user_id: 2, image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484295924/13475017_10154102046959845_7576252100101282718_o_yvoedo.jpg")
+clear turquoise waters.", location:"Sicily, Italy",
+user_id: 2)
+
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484295924/13475017_10154102046959845_7576252100101282718_o_yvoedo.jpg",
+trip_id: 1)

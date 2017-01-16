@@ -9,7 +9,9 @@ class TripIndexItem extends React.Component {
       description: "",
       location: "",
       user_id: "",
-      image_url: ""}, this.props.trip);
+      image_url: "",
+      user: {}
+      }, this.props.trip);
 
   }
 
@@ -42,8 +44,6 @@ class TripIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.state);
     const deleteButton =  this.deleteButton();
       return (
         <div className="trip-index-item-container">
@@ -55,7 +55,7 @@ class TripIndexItem extends React.Component {
               <div className="trip-index-item-writing">
                 <div className="trip-index-item-box">
                   <div className="trip-index-item-user">
-                    User Info Goes Here
+                    {this.state.user.user_name}
                   </div>
                 </div>
                 <div className="trip-index-item-box">
@@ -64,7 +64,7 @@ class TripIndexItem extends React.Component {
                   </div>
                 </div>
                 <div className="trip-index-item-box">
-                  <div className="trip-location">LOCATION</div>
+                  <div className="trip-location">{this.state.location}</div>
                   </div>
                 <div className="trip-index-item-box">
                   <div className="trip-index-item-description">

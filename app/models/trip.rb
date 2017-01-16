@@ -1,4 +1,5 @@
 class Trip < ApplicationRecord
-  validates :title, :description, :user_id, :image_url, presence: true 
+  validates :title, :description, :user_id, presence: true
   belongs_to :user
+  has_many :images
 end

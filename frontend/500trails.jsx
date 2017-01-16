@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
+import {createImage} from './actions/trip_actions';
+import Modal from 'react-modal';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -11,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+  Modal.setAppElement(document.body);
+
   window.store = store;
   const root = document.getElementById('root');
   ReactDom.render( <Root store={store} />, root);
