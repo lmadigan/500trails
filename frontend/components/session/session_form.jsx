@@ -1,28 +1,37 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import Greeting from '../greeting/greeting_container';
+import { merge } from 'lodash';
 
 class SessionForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          user_name: "",
-          password: ""
+          guest : {
+            user_name: "",
+            password: ""
+          },
+        currentUser: this.props.currentUser
       };
       this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    let user = merge({}, this.props.currentUser);
+    this.setState({currentUser: user});
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    const user = Object.assign({}, this.state.guest);
     this.props.processForm({user});
   }
 
   otherForm() {
     if (this.props.formType === 'login') {
-     return   <Link to='/signup'><button>Sign Up</button></Link> ;
+     return   <Link to='/signup'><button>SIGN UP</button></Link> ;
     } else {
-      return <Link to='/login'><button>Log In</button></Link> ;
+      return <Link to='/login'><button>LOG IN</button></Link> ;
     }
   }
 
@@ -32,7 +41,8 @@ class SessionForm extends React.Component {
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/");
+      let id = this.props.currentUser.id;
+			this.props.router.push(`users/${id}`);
 		}
 	}
 
@@ -55,6 +65,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     const sessionFormHeader = (this.props.formType === 'login' ?
       "Log In to 500trails" : "Join 500trails");
     const errors = this.renderErrorMessages();

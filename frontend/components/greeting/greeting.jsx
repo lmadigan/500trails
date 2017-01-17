@@ -4,7 +4,7 @@ import Modal from 'react-modal';
 import { customStyles } from './modal_style';
 import TripForm from '../trips/trip_form';
 
-export default class Greeting extends React.Component {
+class Greeting extends React.Component {
   constructor(props) {
     super(props);
     this.sessionLinks.bind(this);
@@ -13,6 +13,7 @@ export default class Greeting extends React.Component {
     this.loginLink.bind(this);
     this._handleClick = this._handleClick.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
+    this.logoutAndRedirect = this.logoutAndRedirect.bind(this);
     this.state = {
       guest: {
         user_name: "guest",
@@ -39,7 +40,16 @@ export default class Greeting extends React.Component {
   loginGuest() {
     const user = Object.assign({}, this.state.guest);
     this.props.login({user});
+    this.props.router.push(`users/2`);
   }
+
+
+	// redirectToDemo() {
+	// 	if (this.props.loggedIn) {
+  //     let id = this.props.currentUser.id;
+	// 		this.props.router.push(`users/${id}`);
+	// 	}
+	// }
 
   sessionLinks() {
     return (
@@ -76,13 +86,17 @@ export default class Greeting extends React.Component {
       </nav>
     );
   }
+  logoutAndRedirect() {
+    this.props.logout();
+    this.props.router.push('/');
+  }
 
   personalGreeting() {
     return (
       <nav className="right-nav">
         <ul>
           <li className="header-name">{this.props.currentUser.user_name}</li>
-          <li><button className="header-button" onClick={this.props.logout}>LOG OUT</button></li>
+          <li><button className="header-button" onClick={this.logoutAndRedirect}>LOG OUT</button></li>
           <li><button onClick={this._handleClick}>ADD TRIP</button></li>
         </ul>
 
@@ -128,6 +142,7 @@ export default class Greeting extends React.Component {
   }
 }
 
+export default withRouter(Greeting);
 
 
 // <button onClick={this._onModalClose}>CLOSE</button>

@@ -26,6 +26,24 @@ class TripIndexItem extends React.Component {
     this.props.deleteTrip(this.props.tripId);
   }
 
+  imageButtonSection() {
+    const deleteButton =  this.deleteButton();
+    return (
+      <nav className="image-buttons-container">
+        <ul>
+          <li className="link-to-user">
+            <Link to={`/users/${this.state.user_id}`}>
+              Back to User Page
+            </Link>
+          </li>
+          <li className="link-delete">
+            {deleteButton}
+          </li>
+        </ul>
+      </nav>
+    );
+  }
+
   deleteButton() {
     if (this.props.currentUser !== null &&
       this.props.currentUser.id === this.state.user_id) {
@@ -42,8 +60,10 @@ class TripIndexItem extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    console.log(this.state);
     let image = (this.state.images) ? this.state.images[0].image_url : "";
-    const deleteButton =  this.deleteButton();
+    const imageButtons = this.imageButtonSection();
       return (
         <div className="trip-index-item-container">
           <section className="trip-index-item-wrapper">
@@ -70,7 +90,7 @@ class TripIndexItem extends React.Component {
                     <h1>{this.state.description}</h1>
                   </div>
                 </div>
-                {deleteButton}
+                {imageButtons}
               </div>
             </div>
           </section>

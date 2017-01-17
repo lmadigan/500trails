@@ -1,6 +1,6 @@
 import React from 'react';
 var Masonry = require('react-masonry-component');
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -19,7 +19,9 @@ class UserProfile extends React.Component {
     const userPics = this.props.user.images.map(function(image, idx){
       return (
         <div className="image-element-class" key={idx} >
-          <img src={image.image_url} />
+          <Link to={`/trips/${image.trip_id}`}>
+            <img src={image.image_url} />
+          </Link>
         </div>
       );
     });
@@ -33,7 +35,6 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let userTrips = (this.props.user.images === undefined ) ?  "" : this.userTrips() ;
     return (
       <div className="user-profile-container">

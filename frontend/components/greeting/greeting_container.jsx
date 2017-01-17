@@ -7,6 +7,7 @@ import { createTrip } from '../../actions/trip_actions';
 const mapStateToProps = ({session}) => {
   return {
     currentUser: session.currentUser,
+    loggedIn: Boolean(session.currentUser)
   };
 };
 
