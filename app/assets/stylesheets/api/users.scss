@@ -2,10 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user-name {
+.user-header-container {
   margin-top: 50px;
   background: white;
+  min-height: 200px;
+  width: 100%;
 }
+
+.back
 
 .image-element-class img{
   width: 315px;
@@ -67,7 +71,7 @@
   text-align: center;;
 }
 
-.user-trips {
+.users-trips {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -79,4 +83,13 @@
   color: #0099e5;
   line-decoration: underline;
 
+}
+
+.users-trips {
+  display: flex;
+  justify-content: center;
+}
+
+.masonry-container {
+  width: 1300px;
 }

@@ -5,16 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create(user_name: "hikerdude", password: "password")
-User.create(user_name: "guest", password: "password123", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484643221/8mbdd0phxgy-joshua-earle_zzcqgy.jpg",
+user1 = User.create(user_name: "hikerdude", password: "password")
+user2 = User.create(user_name: "guest", password: "password123", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484643221/8mbdd0phxgy-joshua-earle_zzcqgy.jpg",
   thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484643375/IMG_0680_j4g1wb.jpg")
 
-Trip.create(title: "Cala Capreria, Sicilia", description:"Part of Sicily's first nature reserve,
+calacapria = Trip.create(title: "Cala Capreria, Sicilia", description:"Part of Sicily's first nature reserve,
 this trail was a
 glimpse at natural beauty of Sicily. About a
 mile-long hike led to this hidden beach with crystal
 clear turquoise waters.", location:"Sicily, Italy",
-user_id: 2)
+user_id: user1.id)
 
 
 Trip.create(title: "Under the Bixby Bridge", description:"hi", location:"Big Sur, California",

@@ -26,7 +26,7 @@ class TripForm extends React.Component {
   // }
 
   redirectToUserProfile() {
-    this.props.router.push("/trips/1");
+    this.props.router.push(`/users/${this.props.currentUser.id}`);
   }
 
   handleSubmit(e) {
@@ -62,7 +62,7 @@ uploadPhoto(e) {
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
       if(!error){
         let url = results[0].url;
-        this.setState({"image_url": url});
+        this.setState({image_url: url});
         this.setState({tripForm: true});
 
       }
@@ -140,6 +140,8 @@ uploadPhoto(e) {
   }
 
 	render() {
+    console.log(this.state);
+    console.log(this.props);
     let showTripForm = (this.state.tripForm) ? this.tripInfo() : "";
     let photo = (this.state.image_url === '') ? this.photoUpLoad() : this.photoContainer() ;
     console.log(this.props);

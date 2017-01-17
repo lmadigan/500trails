@@ -27,18 +27,25 @@ class UserProfile extends React.Component {
     });
 
     return (
-      <Masonry className='image-masonry' elementType={'div'}
-        columnWidth='image-element-class' percentPosition='true'>
-        {userPics}
-      </Masonry>
+      <div className="masonry-conatiner">
+        <Masonry className='image-masonry' elementType={'div'}
+          columnWidth='image-element-class' percentPosition='true'>
+          {userPics}
+        </Masonry>
+      </div>
+
     );
   }
 
   render() {
+    console.log(this.state);
+    console.log(this.props);
     let userTrips = (this.props.user.images === undefined ) ?  "" : this.userTrips() ;
     return (
       <div className="user-profile-container">
-        <div className="user-name">
+        <div className="user-header-container">
+          <div className="background-photo-container"></div>
+
           <h1>USER PAGe!</h1>
         </div>
         <div className="user-nav-bar-container">
