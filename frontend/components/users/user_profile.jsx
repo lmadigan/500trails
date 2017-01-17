@@ -44,7 +44,9 @@ class UserProfile extends React.Component {
     return (
       <div className="user-profile-container">
         <div className="user-header-container">
-          <div className="background-photo-container"></div>
+          <div className="background-photo-container"
+
+              style={ {background: "url(" + this.props.user.background_photo + ")" } }></div>
 
           <h1>USER PAGe!</h1>
         </div>
