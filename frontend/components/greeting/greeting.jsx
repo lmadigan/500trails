@@ -131,7 +131,8 @@ class Greeting extends React.Component {
             isOpen={this.state.modalOpen}
             onRequestClose={this._onModalClose}
             style={customStyles}
-            onAfterOpen={this.onModalOpen}>
+            onAfterOpen={this.onModalOpen}
+            contentLabel="Modal">
             <TripForm currentUser={this.props.currentUser}
                 createTrip={this.props.createTrip}
                 closeModal={this._onModalClose}/>
