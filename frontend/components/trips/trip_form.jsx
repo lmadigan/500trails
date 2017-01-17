@@ -58,6 +58,7 @@ class TripForm extends React.Component {
 
 
 uploadPhoto(e) {
+  console.log(CLOUDINARY_OPTIONS);
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
       if(!error){
