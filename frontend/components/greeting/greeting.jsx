@@ -82,8 +82,8 @@ export default class Greeting extends React.Component {
       <nav className="right-nav">
         <ul>
           <li className="header-name">{this.props.currentUser.user_name}</li>
-          <li><button className="header-button" onClick={this.props.logout}>Log Out</button></li>
-          <li><button onClick={this._handleClick}>Add Trip</button></li>
+          <li><button className="header-button" onClick={this.props.logout}>LOG OUT</button></li>
+          <li><button onClick={this._handleClick}>ADD TRIP</button></li>
         </ul>
 
       </nav>
@@ -107,7 +107,7 @@ export default class Greeting extends React.Component {
       <header className="top-nav-header">
         <nav className="left-nav">
           <ul className="F00trails-nav-header">
-            <li><Link to="/">500Trails</Link></li>
+            <li><Link to="/">500TRAILS</Link></li>
             <li>DISCOVER</li>
             <li>LOCATION</li>
           </ul>
@@ -118,7 +118,9 @@ export default class Greeting extends React.Component {
             onRequestClose={this._onModalClose}
             style={customStyles}
             onAfterOpen={this.onModalOpen}>
-            <TripForm />
+            <TripForm currentUser={this.props.currentUser}
+                createTrip={this.props.createTrip}
+                closeModal={this._onModalClose}/>
           <br/>
           </Modal>
       </header>

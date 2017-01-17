@@ -14,10 +14,10 @@ class Api::UsersController < ApplicationController
       )
     end
   end
-  # 
-  # def show
-  #
-  # end
+
+  def show
+      @user = User.includes(:trips, :images).find(params[:id])
+  end
 
 
   private

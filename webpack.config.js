@@ -17,6 +17,7 @@ module.exports = {
           presets: ['es2015', 'react']
         }
       }
+
     ]
   },
   devtool: 'source-maps',

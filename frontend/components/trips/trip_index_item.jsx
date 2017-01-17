@@ -30,11 +30,9 @@ class TripIndexItem extends React.Component {
     if (this.props.currentUser !== null &&
       this.props.currentUser.id === this.state.user_id) {
         return (
-          <div className="trip-index-item-box">
-            <div className="delte-button-box">
+            <div className="delete-button-box">
               <button className="delete-button">Delete Trip</button>
             </div>
-          </div>
         );
       } else {
         return (
@@ -44,12 +42,13 @@ class TripIndexItem extends React.Component {
   }
 
   render() {
+    let image = (this.state.images) ? this.state.images[0].image_url : "";
     const deleteButton =  this.deleteButton();
       return (
         <div className="trip-index-item-container">
           <section className="trip-index-item-wrapper">
             <div className="trip-index-item-photo-wrapper">
-              <img src={this.state.image_url}/>
+              <img src={image}/>
             </div>
             <div className="trip-index-item-details">
               <div className="trip-index-item-writing">

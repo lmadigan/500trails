@@ -13,22 +13,30 @@
 .trip-form {
   padding-left: 20px;
   padding-right: 20px;
-  width: 235px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   vertical-align: middle;
 }
 
 .trip-form-photo-area {
   display: flex;
+  width:60%
+}
+
+.photo-upload {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .photo-upload-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-right: 20px;
+  width: 100%;
+  align-items: center;
 }
 .photo-upload-form button{
   text-align: center;
@@ -48,31 +56,29 @@
 }
 
 .photo-upload-form img {
-  height: 300px;
+  height: 350px;
   width: auto;
 }
 
 .trip-form-input-area {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  padding-left: 20px;
+  border-left: grey;
+  width: 40%
 }
 
 .input-type {
-  text-align: center;
-  padding-bottom: 20px;
   padding-top: 20px;
   padding-right: 15px;
   padding-left: 15px;
+  width: 100%;
 }
 
-.input-type input:hover{
-  border: #D0D1D1;
-}
 
 .create-trip-button {
+    text-align: center;
     width: 100%;
+    max-width: 226px;
     background: #37DE69;
     padding-bottom: 7px;
     padding-top: 7px;
@@ -80,4 +86,36 @@
     color: white;
     border: 1px solid #2DC45B;
     text-shadow: 0px 1px 0px #2DC45B;
+}
+
+.trip-label {
+  color: #0099e5;
+  border-bottom: 5px;
+  font-size: 14px;
+}
+
+.trip-label-input {
+  width: 100%;
+  max-width: 226px;
+  box-shadow: 0px 1px 9px -1px rgba(0,0,0,0.75);
+  padding: 4px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.description-label-input {
+  width: 100%;
+  max-width: 226px;
+  box-shadow: 0px 1px 9px -1px rgba(0,0,0,0.75);
+  border-radius: 3px;
+  padding: 4px;
+  padding-bottom: 60px;
+  font-size: 12px;
+}
+
+.trip-form-photo-upload {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

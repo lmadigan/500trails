@@ -5,7 +5,8 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
   attr_reader :password
 
-  has_many :trips 
+  has_many :trips
+  has_many :images, through: :trips, source: :images
 
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64

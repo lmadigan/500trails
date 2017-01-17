@@ -5,31 +5,11 @@ export const RECEIVE_TRIP_ERRORS = "RECEIVE_TRIP_ERRORS";
 export const RECEIVE_IMAGE = "RECEIVE_IMAGE";
 import {merge} from 'lodash';
 
-
-// export const createTrip = trip => dispatch => (
-//   TripAPIUtil.createTrip(trip.trip).then(
-//       newTrip => (
-//         // let image = merge({}, trip.image, {image : {trip_id: newTrip.id}});
-//         TripAPIUtil.createImage(trip.image).then(
-//           dispatch(receiveCurrentTrip(newTrip))
-//         ),
-//     err => dispatch(receiveTripErrors(err.responseJSON)))
-// ));
-
- export function createTrip (trip) {
-   console.log(trip);
-  return function(dispatch) {
-    const image = trip.image ;
-    TripAPIUtil.createTrip(trip.trip).then(
-        function(newTrip) {
-          debugger
-          let imageItem = merge({}, image, {image : {trip_id: newTrip.id}});
-          return TripAPIUtil.createImage(imageItem).then(
-            dispatch(receiveCurrentTrip(newTrip))
-          ),
-          err => dispatch(receiveTripErrors(err.responseJSON));
-        });
-  };}
+  export const createTrip = trip => dispatch => (
+      TripAPIUtil.createTrip(trip)
+      .then(newTrip => dispatch(receiveCurrentTrip(newTrip)),
+      err => dispatch(receiveTripErrors(err.responseJSON)))
+    );
 
 
 

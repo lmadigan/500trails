@@ -18,6 +18,15 @@ class TripForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadPhoto = this.uploadPhoto.bind(this);
+    this.redirectToUserProfile = this.redirectToUserProfile.bind(this);
+  }
+
+  // componentDidUpdate() {
+  //   this.redirectToUserProfile();
+  // }
+
+  redirectToUserProfile() {
+    this.props.router.push("/trips/1");
   }
 
   handleSubmit(e) {
@@ -26,10 +35,11 @@ class TripForm extends React.Component {
       description: this.state.description,
       location: this.state.location,
       user_id: this.props.currentUser.id,
+      image_url: this.state.image_url
         }};
-    let image = { image: {image_url: this.state.image_url}};
-    const trip = merge({}, userTrip, image);
-    this.props.createTrip({trip});
+    this.props.createTrip(userTrip);
+    this.props.closeModal();
+    this.redirectToUserProfile();
   }
 
   update(property) {
@@ -64,31 +74,46 @@ uploadPhoto(e) {
     return(
       <div className="trip-form-input-area">
         <div className="input-type">
+          <button className="create-trip-button">Create Trip</button>
+        </div>
+        <br/>
+        <div className="input-type">
+          <label className="trip-label">
+            Title:
+          </label>
+          <br/>
           <input
+            className="trip-label-input"
             type="text"
             value={this.state.title}
-            placeholder="Title"
             onChange={this.update('title')}
           />
         </div>
         <div className="input-type">
+          <label className="trip-label">
+            Location:
+          </label>
+          <br/>
           <input
+            className="trip-label-input"
             type="text"
             value={this.state.location}
-            placeholder="Location"
+            placeholder="Where was the photo taken?"
             onChange={this.update('location')}
             />
         </div>
         <div className="input-type">
+          <label className="trip-label">
+            Description:
+          </label>
+          <br/>
           <input
+            className="description-label-input"
             type="text"
             value={this.state.description}
-            placeholder="Description"
+            placeholder="Tell us more about your trip!"
             onChange={this.update('description')}
             />
-        </div>
-        <div className="input-type">
-          <button className="create-trip-button">Create Trip</button>
         </div>
       </div>
     );
@@ -97,7 +122,7 @@ uploadPhoto(e) {
   photoContainer() {
     return (
       <div className="trip-form-photo-area">
-        <div className="photo-upload-form">
+        <div className="photo-upload">
           <img src={this.state.image_url} />
           </div>
         </div>
@@ -106,7 +131,7 @@ uploadPhoto(e) {
 
   photoUpLoad() {
     return (
-      <div className="trip-form-photo-area">
+      <div className="trip-form-photo-upload">
         <div className="photo-upload-form">
           <button onClick={this.uploadPhoto}>Browse Photos</button>
         </div>
@@ -117,6 +142,7 @@ uploadPhoto(e) {
 	render() {
     let showTripForm = (this.state.tripForm) ? this.tripInfo() : "";
     let photo = (this.state.image_url === '') ? this.photoUpLoad() : this.photoContainer() ;
+    console.log(this.props);
     return (
       <section className="new-trip-form-container">
         {this.errors()}
@@ -130,5 +156,3 @@ uploadPhoto(e) {
 }
 
 export default withRouter(TripForm);
-
-  // const trip = Object.assign({}, this.state, {trip: { user_id: this.props.currentUser.id } });

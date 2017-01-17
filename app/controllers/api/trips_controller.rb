@@ -3,6 +3,7 @@ class Api::TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     if @trip.save
+      Image.create(trip_id: @trip.id, image_url: params[:trip][:image_url])
       render :show
     else
       render(
@@ -12,7 +13,7 @@ class Api::TripsController < ApplicationController
   end
 
   def destroy
-   @trip = current_user.todos.find(params[:id])
+   @trip = current_user.trips.find(params[:id])
    @trip.destroy
    render :index
   end
@@ -40,4 +41,8 @@ class Api::TripsController < ApplicationController
   def trip_params
     params.require(:trip).permit(:title, :description, :user_id, :location)
   end
+
+  # def image_url
+  #   params.require(:trip).permit(:image_url)
+  # end
 end

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { createTrip, createImage } from '../../actions/trip_actions';
 import TripFrom from './trip_form';
 
-const mapStateToProps = (state, ownProps ) => ({
+const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser
 });
 
