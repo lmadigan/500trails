@@ -21,9 +21,6 @@ class TripForm extends React.Component {
     this.redirectToUserProfile = this.redirectToUserProfile.bind(this);
   }
 
-  // componentDidUpdate() {
-  //   this.redirectToUserProfile();
-  // }
 
   redirectToUserProfile() {
     this.props.router.push(`/users/${this.props.currentUser.id}`);
@@ -58,7 +55,6 @@ class TripForm extends React.Component {
 
 
 uploadPhoto(e) {
-  console.log(CLOUDINARY_OPTIONS);
     e.preventDefault();
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
       if(!error){

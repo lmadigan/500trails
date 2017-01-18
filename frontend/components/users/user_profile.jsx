@@ -29,7 +29,7 @@ class UserProfile extends React.Component {
     return (
       <div className="masonry-conatiner">
         <Masonry className='image-masonry' elementType={'div'}
-          columnWidth='image-element-class' percentPosition='true'>
+           fitWidth='true'>
           {userPics}
         </Masonry>
       </div>
@@ -43,31 +43,46 @@ class UserProfile extends React.Component {
     let userTrips = (this.props.user.images === undefined ) ?  "" : this.userTrips() ;
     return (
       <div className="user-profile-container">
-        <div className="user-header-container">
-          <div className="background-photo-container"
 
-              style={ {background: "url(" + this.props.user.background_photo + ")" } }></div>
+        <div className="background-photo-container">
+            <img src={this.props.user.background_photo} />
+            </div>
 
-          <h1>USER PAGe!</h1>
+        <div className="scroll-div">
+          <div className="user-header-container">
+            <section className="user-navatar-container">
+              <div className="user-navatar">
+                <img src= {this.props.user.thumbnail} />
+              </div>
+
+            </section>
+            <section className="user-info">
+                <h1>USER PAGe!</h1>
+            </section>
+          </div>
+          <div className="user-nav-bar-container">
+            <nav className="user-nav">
+              <ul className="nav-elements">
+                <li>
+                  TRIPS
+                </li>
+                <li>
+                  SAVED TRIPS
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div className="users-trips">
+            {userTrips}
+          </div>
         </div>
-        <div className="user-nav-bar-container">
-          <nav className="user-nav">
-            <ul className="nav-elements">
-              <li>
-                TRIPS
-              </li>
-              <li>
-                SAVED TRIPS
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div className="users-trips">
-          {userTrips}
-        </div>
+
       </div>
     );
   }
 }
 
 export default withRouter(UserProfile);
+
+
+// style={ {background: "url(" + this.props.user.background_photo + ")" } }

@@ -12,6 +12,7 @@
   position: fixed;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 
@@ -75,7 +76,11 @@
 
 .trip-index-item-user {
   padding: 20px;
+  text-align: center;
 }
+
+// .trip-index-item-user h1{
+// }
 
 .trip-index-item-title {
   padding: 20px;

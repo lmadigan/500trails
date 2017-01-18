@@ -65,46 +65,51 @@ class TripIndexItem extends React.Component {
     let image = (this.state.images) ? this.state.images[0].image_url : "";
     const imageButtons = this.imageButtonSection();
       return (
-        <section className="trip-index-item-container">
-          <section className="trip-index-item-wrapper">
-            <div className="trip-index-item-photo-wrapper">
-              <img src={image}/>
-            </div>
-            <div className="trip-index-item-details">
-
-              <div className="trip-index-item-writing">
-
-                <div>
-                  <div className="trip-index-item-box">
-                    <div className="trip-index-item-user">
-                      {this.state.user.user_name}
-                    </div>
-                  </div>
-                  <div className="trip-index-item-box">
-                    <div className="trip-index-item-title">
-                      <h1>{this.state.title}</h1>
-                    </div>
-                  </div>
-                  <div className="trip-index-item-box">
-                    <div className="trip-location">{this.state.location}</div>
-                    </div>
-                  <div className="trip-index-item-box">
-                    <div className="trip-index-item-description">
-                      <h1>{this.state.description}</h1>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  {imageButtons}
-                </div>
-
+          <section className="trip-index-item-container">
+            <section className="trip-index-item-wrapper">
+              <div className="trip-index-item-photo-wrapper">
+                <img src={image}/>
               </div>
-            </div>
+              <div className="trip-index-item-details">
+
+                <div className="trip-index-item-writing">
+
+                  <div>
+                    <div className="trip-index-item-box">
+                      <section className="user-navatar-container">
+                        <div className="user-navatar">
+                          <img src= {this.state.user.thumbnail} />
+                        </div>
+                      </section>
+                      <div className="trip-index-item-user">
+                        <h1>
+                          {this.state.user.user_name}
+                        </h1>
+                      </div>
+                    </div>
+                    <div className="trip-index-item-box">
+                      <div className="trip-index-item-title">
+                        <h1>{this.state.title}</h1>
+                      </div>
+                    </div>
+                    <div className="trip-index-item-box">
+                      <div className="trip-location">{this.state.location}</div>
+                    </div>
+                    <div className="trip-index-item-box">
+                      <div className="trip-index-item-description">
+                        <h1>{this.state.description}</h1>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    {imageButtons}
+                  </div>
+
+                </div>
+              </div>
+            </section>
           </section>
-        </section>
-
-
       );
   }
 }

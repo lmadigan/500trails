@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .user-header-container {
-  margin-top: 50px;
-  background: white;
+  margin-top: -50px;
+  background: transparent;
   min-height: 200px;
   width: 100%;
+  z-index: 100;
 }
 
 .background-photo-container {
@@ -14,12 +15,54 @@
   background-repeat: no-repeat;
   background-position: center center;
   text-align: center;
-  top:50;
+  background-attachment: fixed;
   width: 100%;
   height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.background-photo-container img {
+  position: fixed;
+}
+
+.scroll-div {
+  background-color: #F6F3F3;
+  z-index: 5;
+}
+
+.user-navatar-container {
+  height: 100px;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+.user-navatar {
+  height: 150px;
+  width: auto;
+  border-radius: 50%;
+  background: transparent;
+
+}
+
+.user-navatar img{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.user-info {
+  width: 100%;
+  height: 160px;
+  background: #FEFCFC;
+}
+
+.background-photo-container img{
+  height: 600px;
+  width: auto;
 }
 
 .image-element-class img{

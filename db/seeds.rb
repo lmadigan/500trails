@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 user1 = User.create(user_name: "hikerdude", password: "password")
-user2 = User.create(user_name: "guest", password: "password123", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484643221/8mbdd0phxgy-joshua-earle_zzcqgy.jpg",
+user2 = User.create(user_name: "guest", password: "password123", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
   thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484643375/IMG_0680_j4g1wb.jpg")
 
 calacapria = Trip.create(title: "Cala Capreria, Sicilia", description:"Part of Sicily's first nature reserve,
