@@ -27,6 +27,13 @@
   position: fixed;
 }
 
+.user-header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
 .scroll-div {
   background-color: #F6F3F3;
   z-index: 5;
@@ -58,6 +65,7 @@
   width: 100%;
   height: 160px;
   background: #FEFCFC;
+  justify-content: center;
 }
 
 .background-photo-container img{

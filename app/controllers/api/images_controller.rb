@@ -7,8 +7,12 @@ class Api::ImagesController < ApplicationController
   def create
     @image = Image.new(image_params)
     if @image.save
-      render :show
+      render 'api/users/show'
     else
+      render(
+        json: ["Invalid image params"],
+        status: 401
+      )
     end
   end
 

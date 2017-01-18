@@ -1,6 +1,8 @@
 json.extract! trip, :id, :title, :description, :user_id,
-  :location, :user
+  :location, :user, :images
 
-json.images do
-  json.partial! 'api/images/image', collection: trip.images, as: :image
-end
+json.images trip.images
+
+# json.images do
+#   json.partial! 'api/images/image', collection: trip.images, as: :image
+# end

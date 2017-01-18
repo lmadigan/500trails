@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 user1 = User.create(user_name: "hikerdude", password: "password")
-user2 = User.create(user_name: "guest", password: "password123", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+user2 = User.create(user_name: "guest", password: "password123", fname: "Guest", lname: "User", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
   thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484643375/IMG_0680_j4g1wb.jpg")
 
 calacapria = Trip.create(title: "Cala Capreria, Sicilia", description:"Part of Sicily's first nature reserve,
@@ -70,3 +70,65 @@ Trip.create(title: "Antelope Canyon", description:"hi", location:"Page, Arizona"
 user_id: 2)
 Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608084/500trails/antelope_canyon.jpg",
 trip_id: 11)
+
+Like.create(user_id: 2, trip_id: 12)
+Like.create(user_id: 2, trip_id: 13)
+Like.create(user_id: 2, trip_id: 14)
+Like.create(user_id: 2, trip_id: 15)
+
+
+Trip.create(title: "Lake Michigian", description:"Blue Water", location:"Empire, Michigian",
+user_id: 1)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766314/michigan_esmtjl.jpg",
+trip_id: 12)
+
+Trip.create(title: "ON THE ROAD AGAIN", description:"Road trip from Seatle to Alaska", location:"Valdes, Alaska",
+user_id: 1)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766322/valdes_alaska_blweys.jpg",
+trip_id: 13)
+
+Trip.create(title: "Mount Saint Elias", description:"Ski Trip", location:"Alaska",
+user_id: 1)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766343/mountain_alaska_ujoewc.jpg",
+trip_id: 14)
+
+Trip.create(title: "Stary Night", description:"Stars by the Coast", location:"Greece",
+user_id: 1)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766340/Greece_mceb93.jpg",
+trip_id: 15)
+
+
+
+
+
+# Trip.create(title: "Sarek National Park", description:"hi", location:"Jokkmokk Municipality, Lapland",
+# user_id: 1)
+# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608083/500trails/sareknationalparksweden.jpg",
+# trip_id: 16)
+#
+#
+# Trip.create(title: "Salt Creek Falls", description:"Willamette National Forest", location:"Oakridge, Oregon",
+# user_id: 1)
+# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608082/500trails/salt_creek_falls.jpg",
+# trip_id: 17)
+#
+# Trip.create(title: "Point Dunes State Beach", description:"Shredding the Gnar", location:"Malibu, California",
+# user_id: 1)
+# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608083/500trails/pointdumestatebeach.jpg",
+# trip_id: 18)
+#
+#
+# Trip.create(title: "Manhattan Beach", description:"Sunset Skim", location:"Manhattan Beach, California",
+# user_id: 1)
+# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608081/500trails/manhattanhbeach.jpg",
+# trip_id: 19)
+#
+# Trip.create(title: "Late night rides", description:"Zion Lodge", location:"Springdale, Utah",
+# user_id: 1)
+# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608118/500trails/zionlodge_springdale.jpg",
+# trip_id: 10)
+#
+# Trip.create(title: "Antelope Canyon", description:"hi", location:"Page, Arizona",
+# user_id: 1)
+# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608084/500trails/antelope_canyon.jpg",
+# trip_id: 11)

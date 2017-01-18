@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_many :trips
   has_many :images, through: :trips, source: :images
+  has_many :likes
+  has_many :liked_trips, through: :likes, source: :trip
 
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64
