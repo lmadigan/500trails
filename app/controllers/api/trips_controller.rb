@@ -15,20 +15,20 @@ class Api::TripsController < ApplicationController
   def destroy
    @trip = current_user.trips.find(params[:id])
    @trip.destroy
-   render :index
+   render 'api/users/show'
   end
 
   def update
     @trip = Trip.find(params[:id])
     if @trip.update(trip_params)
-      render :show
+      render 'api/users/show'
     else
       render(json: ["This cannot be updated"], status: 401)
     end
   end
 
   def index
-    @trips = Trip.all.where(user_id: currentUser.id)
+    @trips = Trip.includes(:user).where(user_id: currentUser.id).all
     render :index
   end
 

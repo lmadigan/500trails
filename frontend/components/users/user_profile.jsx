@@ -9,18 +9,26 @@ import { merge } from 'lodash';
 class UserProfile extends React.Component {
   constructor(props) {
     super(props);
-    this.userTrips = this.userTrips.bind(this);
     this._handleClick = this._handleClick.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
+    this.showTrips = this.showTrips.bind(this);
+    this.tripsToShow = this.tripsToShow.bind(this);
     this.state = {
-      user: "",
+      user: {},
       modalOpen: false,
-      trip: {}
+      trip: {},
+      tripId: ""
     };
   }
 
   componentWillMount() {
     this.props.fetchUser(this.props.userId);
+  }
+
+  componentWillUpdate(nextProps) {
+    if (this.props.params.userId !== nextProps.params.userId) {
+      this.props.fetchUser(nextProps.userId);
+    }
   }
 
   _onModalClose() {
@@ -33,12 +41,32 @@ class UserProfile extends React.Component {
   }
 
   _handleClick(trip) {
+    const trips = this.props.trips[this.props.trips.length-1];
+    if (trips === "saved") {
+      this.setState({user: trip.user}) ;
+    } else {
+      this.setState({user: this.props.currentUser}) ;
+    }
     this.setState({ modalOpen: true });
     this.setState({trip: trip});
+    this.setState({tripId: trip.id});
   }
 
-  userTrips() {
-    const userPics = this.props.trips.map(function(trip, idx){
+
+  tripsToShow() {
+    const trip = this.props.trips[this.props.trips.length-1];
+    return this.showTrips(trip);
+  }
+
+  showTrips(trips) {
+    let tripPhotos = "";
+    
+    if (trips === "saved") {
+      tripPhotos = this.props.user.liked_trips ;
+    } else {
+      tripPhotos = this.props.user.trips ;
+    }
+    const userPics = tripPhotos.map(function(trip, idx){
       return (
         <div className="image-element-class" key={idx} >
           <img onClick={() => this._handleClick(trip)} src={trip.images[0].image_url} />
@@ -47,9 +75,10 @@ class UserProfile extends React.Component {
     }, this);
 
     return (
-      <div className="masonry-conatiner">
-        <Masonry className='image-masonry' elementType={'div'}
-           fitWidth='true'>
+      <div className="masonry-container">
+        <Masonry  elementType={'div'}
+           options={{isFitWidth: true}}
+            className={'image-masonry'}>
           {userPics}
         </Masonry>
       </div>
@@ -58,7 +87,10 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    let userTrips = (this.props.user.images === undefined ) ?  "" : this.userTrips() ;
+    console.log(this.props);
+    console.log(this.state);
+
+    let userTrips = (this.props.user.images === undefined ) ?  "" : this.tripsToShow() ;
     return (
       <div className="user-profile-container">
 
@@ -74,18 +106,20 @@ class UserProfile extends React.Component {
               </div>
 
             </section>
-            <section className="user-info">
-                <h1>USER PAGe!</h1>
-            </section>
+            <div className="user-info-container">
+              <div className="user-info">
+                {this.props.user.user_name}
+              </div>
+            </div>
           </div>
           <div className="user-nav-bar-container">
             <nav className="user-nav">
               <ul className="nav-elements">
                 <li>
-                  TRIPS
+                  <Link className="trips-link" to={`/users/${this.props.user.id}/trips`}>TRIPS</Link>
                 </li>
                 <li>
-                  SAVED TRIPS
+                  <Link className="saved-trips-link" to={`/users/${this.props.user.id}/saved`}>SAVED TRIPS</Link>
                 </li>
               </ul>
             </nav>
@@ -104,8 +138,9 @@ class UserProfile extends React.Component {
 
           <TripIndexItem
               fetchTrip={this.props.fetchTrip}
+              deleteTrip={this.props.deleteTrip}
               currentUser={this.props.currentUser}
-              user={this.props.user}
+              user={this.state.user}
               trip={this.state.trip}/>
           </Modal>
 

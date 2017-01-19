@@ -5,27 +5,8 @@ import {merge } from 'lodash';
 class TripIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = merge({title: "",
-      description: "",
-      location: "",
-      user_id: "",
-      images: [],
-      user: {}
-    }, this.props.trip);
-
+    this.deleteTrip = this.deleteTrip.bind(this);
   }
-
-  componentWillReceiveProps() {
-    debugger
-    this.props.fetchTrip(this.props.tripId)
-    .then(() => this.setState(merge({title: "",
-      description: "",
-      user_id: ""}, this.props.trip)));
-    }
-
-    deleteTrip() {
-      this.props.deleteTrip(this.props.tripId);
-    }
 
     imageButtonSection() {
       const deleteButton =  this.deleteButton();
@@ -33,6 +14,7 @@ class TripIndexItem extends React.Component {
         <nav className="image-buttons-container">
           <ul>
             <li className="link-to-user">
+              HIIIIIIIII
             </li>
             <li className="link-delete">
               {deleteButton}
@@ -42,12 +24,18 @@ class TripIndexItem extends React.Component {
       );
     }
 
+    deleteTrip() {
+      const tripId = this.props.trip.id;
+      this.props.deleteTrip(tripId);
+    }
+
     deleteButton() {
       if (this.props.currentUser !== null &&
-        this.props.currentUser.id === this.props.user.user_id) {
+        this.props.currentUser.id === this.props.user.id) {
           return (
-            <div className="delete-button-box">
-              <button className="delete-button">Delete Trip</button>
+            <div>
+              <button
+                onClick={this.deleteTrip}>Delete Trip</button>
             </div>
           );
         } else {
@@ -58,7 +46,6 @@ class TripIndexItem extends React.Component {
       }
 
       render() {
-        console.log(this.state);
         console.log(this.props);
         let image = (this.props.trip) ? this.props.trip.images[0].image_url : "";
         const imageButtons = this.imageButtonSection();
@@ -86,15 +73,15 @@ class TripIndexItem extends React.Component {
                   </div>
                   <div className="trip-index-item-box">
                     <div className="trip-index-item-title">
-                      <h1>{this.state.title}</h1>
+                      <h1>{this.props.trip.title}</h1>
                     </div>
                   </div>
                   <div className="trip-index-item-box">
-                    <div className="trip-location">{this.state.location}</div>
+                    <div className="trip-location">{this.props.trip.location}</div>
                   </div>
                   <div className="trip-index-item-box">
                     <div className="trip-index-item-description">
-                      <h1>{this.state.description}</h1>
+                      <h1>{this.props.trip.description}</h1>
                     </div>
                   </div>
                 </div>

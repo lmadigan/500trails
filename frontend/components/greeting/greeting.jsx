@@ -43,22 +43,14 @@ class Greeting extends React.Component {
     this.props.router.push(`users/2`);
   }
 
-
-	// redirectToDemo() {
-	// 	if (this.props.loggedIn) {
-  //     let id = this.props.currentUser.id;
-	// 		this.props.router.push(`users/${id}`);
-	// 	}
-	// }
-
   sessionLinks() {
     return (
       <nav className="right-nav">
         <ul>
           <li><button className="demo-button"
               onClick={() => this.loginGuest()}>DEMO</button></li>
-            <li className="login-button"><Link to="/login">LOG IN</Link></li>
-          <li className="sign-up-button"><Link to="/signup">SIGN UP</Link></li>
+            <li className="login-button"><Link className="login-link" to="/login">LOG IN</Link></li>
+          <li className="sign-up-button"><Link className="signup-link" to="/signup">SIGN UP</Link></li>
         </ul>
       </nav>
     );
@@ -69,7 +61,7 @@ class Greeting extends React.Component {
         <ul>
           <li><button className="demo-button"
               onClick={() => this.loginGuest()}>DEMO</button></li>
-            <li className="login-button"><Link to="/login">LOG IN</Link></li>
+            <li className="login-button"><Link className="login-link" to="/login">LOG IN</Link></li>
         </ul>
       </nav>
     );
@@ -81,7 +73,7 @@ class Greeting extends React.Component {
         <ul>
           <li><button className="demo-button"
               onClick={() => this.loginGuest()}>DEMO</button></li>
-          <li className="sign-up-button"><Link to="/signup">SIGN UP</Link></li>
+          <li className="sign-up-button"><Link className="signup-link" to="/signup">SIGN UP</Link></li>
         </ul>
       </nav>
     );
@@ -121,7 +113,7 @@ class Greeting extends React.Component {
       <header className="top-nav-header">
         <nav className="left-nav">
           <ul className="F00trails-nav-header">
-            <li><Link to="/">500TRAILS</Link></li>
+            <li><Link className="link500"to="/">500TRAILS</Link></li>
             <li>DISCOVER</li>
             <li>LOCATION</li>
           </ul>

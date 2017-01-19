@@ -11,8 +11,6 @@ import {merge} from 'lodash';
       err => dispatch(receiveTripErrors(err.responseJSON)))
     );
 
-
-
 export const fetchTrip = trip => dispatch => (
     TripAPIUtil.fetchTrip(trip)
     .then(newTrip => dispatch(receiveCurrentTrip(newTrip))

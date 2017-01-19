@@ -15,6 +15,8 @@ glimpse at natural beauty of Sicily. About a
 mile-long hike led to this hidden beach with crystal
 clear turquoise waters.", location:"Sicily, Italy",
 user_id: user1.id)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608400/500trails/hlmbw0mrgpg-josh-felise.jpg",
+trip_id: 1)
 
 
 Trip.create(title: "Under the Bixby Bridge", description:"hi", location:"Big Sur, California",

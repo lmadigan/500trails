@@ -23,6 +23,7 @@
   align-items: center;
 }
 
+
 .background-photo-container img {
   position: fixed;
 }
@@ -61,11 +62,27 @@
   border-radius: 50%;
 }
 
-.user-info {
-  width: 100%;
+.user-info-container {
+  // width: 100%;
+  padding:20px;
   height: 160px;
   background: #FEFCFC;
   justify-content: center;
+  display: flex;
+}
+
+.user-info {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  // flex-direction: column;
+
+}
+
+.user-name {
+  font-size: 20px;
+  color: #0099e5;
+  align-items: center;
 }
 
 .background-photo-container img{
@@ -86,13 +103,6 @@
   margin: 10px;
 }
 
-.image-masonry {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px;
-  margin-left: 10%;
-}
 
 .user-profile-container {
   width: 100%;
@@ -147,11 +157,15 @@
 
 }
 
-.users-trips {
+.masonry-container {
   display: flex;
   justify-content: center;
+  // width: 1200px;
+
 }
 
-.masonry-container {
-  width: 1300px;
+.trips-link:hover,
+.saved-trips-link:hover {
+  color: #0099e5;
+  line-decoration: underline;
 }
