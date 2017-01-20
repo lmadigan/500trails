@@ -4,6 +4,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import {createImage} from './actions/trip_actions';
 import Modal from 'react-modal';
+import { createLike } from './actions/user_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
   Modal.setAppElement(document.body);
-
+  window.createLike = createLike;
   window.store = store;
   const root = document.getElementById('root');
   ReactDom.render( <Root store={store} />, root);

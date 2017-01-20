@@ -47,6 +47,7 @@ class UserProfile extends React.Component {
     } else {
       this.setState({user: this.props.currentUser}) ;
     }
+    debugger
     this.setState({ modalOpen: true });
     this.setState({trip: trip});
     this.setState({tripId: trip.id});
@@ -60,7 +61,7 @@ class UserProfile extends React.Component {
 
   showTrips(trips) {
     let tripPhotos = "";
-    
+
     if (trips === "saved") {
       tripPhotos = this.props.user.liked_trips ;
     } else {
@@ -137,8 +138,10 @@ class UserProfile extends React.Component {
           style={customStyles}>
 
           <TripIndexItem
+            router ={this.props.router}
               fetchTrip={this.props.fetchTrip}
               deleteTrip={this.props.deleteTrip}
+              updateTrip={this.props.updateTrip}
               currentUser={this.props.currentUser}
               user={this.state.user}
               trip={this.state.trip}/>

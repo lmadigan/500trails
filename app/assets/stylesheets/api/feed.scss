@@ -1,0 +1,75 @@
+.home-feed-container {
+  display: flex;
+  justify-content: center;
+  background: #E9E9EA;
+}
+
+.home-feed-items {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  max-width: 830px;
+}
+
+.feed-item-div {
+  width: 100%;
+  max-height: 620px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+  border-radius: 3px;
+}
+
+.photo-info-group {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+
+  background: white;
+  border: #F0EFEF solid 1px;
+}
+
+.feed-item-div-title {
+  padding: 7px;
+  border-bottom: #F0EFEF solid 1px;
+  margin-left: 20px;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed-item-div-title h1 {
+  color: #504C4C;
+}
+
+.road-icon {
+  margin-right: 20px;
+}
+
+.saved-place-icon {
+  color: #04431D;
+}
+
+
+.feed-item-div-location {
+  padding: 7px;
+  margin-left: 20px;
+  font-size: 13px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+// .feed-item-div-location
+
+.location-marker {
+  padding-right: 7px;
+}
+
+
+.feed-item-div:hover{
+  opacity: 0.8;
+}

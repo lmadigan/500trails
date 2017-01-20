@@ -10,14 +10,14 @@ export const customStyles = {
   },
   content : {
     position        : 'absolute',
-     top             : '100px',
-     left            : '100px',
-     right           : '100px',
-     bottom          : '100px',
-     border          : '1px solid #ccc',
+    padding         : '0',
+    margin          : '0 auto',
      zIndex          : 2001,
-     padding         : -20,
      opacity         : '0',
-     transition      : "opacity 0.5s"
+     transition      : "opacity 0.5s",
+     maxWidth        : '1250px',
+     maxHeight       : '830px',
+     border          : 'none'
+
   }
 };

@@ -12,6 +12,7 @@ class SessionForm extends React.Component {
         currentUser: this.props.currentUser
       };
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.clearErrors = this.clearErrors.bind(this);
   }
 
   componentWillMount() {
@@ -22,7 +23,6 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, {user_name: this.state.user_name, password: this.state.password});
-    debugger
     this.props.processForm({user});
   }
 
@@ -36,6 +36,7 @@ class SessionForm extends React.Component {
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
+    this.clearErrors();
 	}
 
 	redirectIfLoggedIn() {
@@ -61,6 +62,15 @@ class SessionForm extends React.Component {
         </ul>
       );
     }
+  }
+
+  clearErrors(){
+    // defer the execution of anonymous function for
+    // 3 seconds and go to next line of code.
+    let errorHandle = this.props.clearErrors;
+    setTimeout(function(){
+        errorHandle();
+    }, 6000);
   }
 
   render() {

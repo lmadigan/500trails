@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, signup, logout } from '../../actions/session_actions';
+import { login, signup, logout, clearErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({session}, ownProps) => ({
@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     processForm: user  => dispatch(processForm(user)),
+    clearErrors: user  => dispatch(clearErrors(user)),
     formType
   };
 };

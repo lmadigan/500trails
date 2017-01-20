@@ -13,10 +13,12 @@
 
  *= require_self
  */
-
+// @import "font-awesome-sprockets";
+@import "font-awesome";
 @import "base/reset.scss";
 @import "base/header.scss";
 @import "base/auth.scss";
 @import "api/trips.scss";
 @import "api/new_trip_form";
 @import "api/users";
+@import "api/feed";

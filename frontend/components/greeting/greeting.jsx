@@ -87,7 +87,7 @@ class Greeting extends React.Component {
     return (
       <nav className="right-nav">
         <ul>
-          <li className="header-name">{this.props.currentUser.user_name}</li>
+          <li className="header-name"><Link className="header-name" to={`/users/${this.props.currentUser.id}/trips`}>{this.props.currentUser.user_name}</Link></li>
           <li><button className="header-button" onClick={this.logoutAndRedirect}>LOG OUT</button></li>
           <li><button onClick={this._handleClick}>ADD TRIP</button></li>
         </ul>

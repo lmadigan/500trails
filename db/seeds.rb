@@ -100,37 +100,131 @@ Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v14847
 trip_id: 15)
 
 
+user3 = User.create(user_name: "yosemitechica", password: "password123", fname: "halie", lname: "berry", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
 
 
+Trip.create(title: "yosemite", description:"such an incredible lookout!", location:"Yosemite National Park, California",
+user_id: 3)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812936/500trails/yosemite-valley.jpg",
+trip_id: 16)
+#
+#
+Trip.create(title: "I feel so small", description:"A walk through the valley before climbing to half dome", location:"Yosemite National Park, California",
+user_id: 3)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812939/500trails/yosemite-national-park.jpg",
+trip_id: 17)
+#
+Trip.create(title: "The best swings are ones made from rock", description:"Arches National Park", location:"Arches National Park",
+user_id: 3)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812935/500trails/xdvppeepd8m-emily-campbell.jpg",
+trip_id: 18)
+#
 
-# Trip.create(title: "Sarek National Park", description:"hi", location:"Jokkmokk Municipality, Lapland",
-# user_id: 1)
-# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608083/500trails/sareknationalparksweden.jpg",
-# trip_id: 16)
+Trip.create(title: "Zion National Park", description:"Neature", location:"Utah, United States",
+user_id: 3)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812935/500trails/wn8ksly8kmq-zach-betten.jpg",
+trip_id: 19)
 #
+Trip.create(title: "Yosemite", description:"Can't get enough of this place", location:"Yosemite National Park, California",
+user_id: 3)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812942/500trails/wilderness.jpg",
+trip_id: 20)
+
+user4 = User.create(user_name: "daviddonner", password: "password123", fname: "david", lname: "donner", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+
 #
-# Trip.create(title: "Salt Creek Falls", description:"Willamette National Forest", location:"Oakridge, Oregon",
-# user_id: 1)
-# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608082/500trails/salt_creek_falls.jpg",
-# trip_id: 17)
+Trip.create(title: "Hiking my way through Russia", description:"Russia is pretty neat", location:"Krutovo, Vladimir",
+user_id: 4)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812941/500trails/vladimir_russia.jpg",
+trip_id: 21)
+
+Trip.create(title: "Hiking my way through Croatia", description:"Winter Wonderland", location:"Platak, Primorsko-Goranska",
+user_id: 4)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812942/500trails/platak_croatia.jpg",
+trip_id: 22)
+
+Trip.create(title: "Olperer Hut ", description:"After a ten mile hike we cozied up in this cabin", location:"Ginzling, Austria",
+user_id: 4)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812940/500trails/Olpererhutte_ginzling_autria.jpg",
+trip_id: 23)
+
+Trip.create(title: "A picture of a picture", description:"North Cascades National Park", location:"Washington, USA",
+user_id: 4)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812940/500trails/north-cascades-national-park.jpg",
+trip_id: 24)
+
+user5 = User.create(user_name: "kat", password: "password123", fname: "Kat", lname: "Kat", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+
 #
-# Trip.create(title: "Point Dunes State Beach", description:"Shredding the Gnar", location:"Malibu, California",
-# user_id: 1)
-# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608083/500trails/pointdumestatebeach.jpg",
-# trip_id: 18)
+Trip.create(title: "Mountains", description:"Peaking", location:"Monte Lidon Italy",
+user_id: 5)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812940/500trails/monte-lidon-italy.jpg",
+trip_id: 25)
+
+Trip.create(title: "Snow Shoeing", description:"Winter Wonderland, Russia", location:"Kolsky District Russia",
+user_id: 5)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812939/500trails/kolsky_district_russia.jpg",
+trip_id: 26)
+
+Trip.create(title: "Haifoss Waterfall", description:"And they say, don't go chasing waterfalls", location:"Iceland",
+user_id: 5)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/haifoss-waterfall-iceland.jpg",
+trip_id: 27)
+
+Trip.create(title: "A trek through the snow", description:"Glencoe Highlands", location:"Highland Park, Illinois",
+user_id: 5)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812939/500trails/glencoe_highland_usa.jpg",
+trip_id: 28)
+
+user6 = User.create(user_name: "hunter", password: "password123", fname: "Hunter", lname: "Gatherer", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+
 #
+Trip.create(title: "Deer and Grass", description:"Peaking Deer", location:"Montana",
+user_id: 6)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/deer.jpg",
+trip_id: 29)
+
+Trip.create(title: "Paradise", description:"The most beautiful sunset", location:"Saint John's, Caribbean",
+user_id: 6)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812937/500trails/e328apwyd_k-ismail-niyax.jpg",
+trip_id: 30)
+
+Trip.create(title: "Crater Lake", description:"And they say, don't go chasing lakes", location:"Cascade Mountains, Oregon",
+user_id: 6)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812937/500trails/crater-lake-untied-states.jpg",
+trip_id: 31)
+
+Trip.create(title: "Cherokee National Forest", description:"Great Smoky Mountains National Park", location:"Southern Appalachian Mountains of east Tennessee",
+user_id: 6)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812939/500trails/cherokee-national-forest.jpg",
+trip_id: 32)
+
+user6 = User.create(user_name: "brownie", password: "password123", fname: "Bronwinnn", lname: "Dunsky", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+
 #
-# Trip.create(title: "Manhattan Beach", description:"Sunset Skim", location:"Manhattan Beach, California",
-# user_id: 1)
-# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608081/500trails/manhattanhbeach.jpg",
-# trip_id: 19)
-#
-# Trip.create(title: "Late night rides", description:"Zion Lodge", location:"Springdale, Utah",
-# user_id: 1)
-# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608118/500trails/zionlodge_springdale.jpg",
-# trip_id: 10)
-#
-# Trip.create(title: "Antelope Canyon", description:"hi", location:"Page, Arizona",
-# user_id: 1)
-# Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608084/500trails/antelope_canyon.jpg",
-# trip_id: 11)
+Trip.create(title: "French Alps", description:"Chamonix Monte Blanc", location:"Franc",
+user_id: 7)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812935/500trails/chamonix-mont-blanc-franc.jpg",
+trip_id: 33)
+
+Trip.create(title: "Blanca Lake Trail", description:"6.5 mile hike around the lake", location:"Steven's Pass, Washington",
+user_id: 7)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812935/500trails/blanca_lake.jpg",
+trip_id: 34)
+
+Trip.create(title: "Minffordd Path", description:"Cader Idris is a mountain in Snowdonia National Park near the town of Dolgellau.", location:"Gwynedd, Wales",
+user_id: 7)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812935/500trails/cadair-idris-penygadair-dolgellun-united-kingdom.jpg",
+trip_id: 35)
+
+Trip.create(title: "Brecklet Trail", description:"The village of Ballachulish", location:"Lochaber, Highland, Scotland,",
+user_id: 7)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812934/500trails/ballachulish-united-kingdom.jpg",
+trip_id: 36)
+
+# //aoraki mount cook new zealand

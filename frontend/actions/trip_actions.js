@@ -3,10 +3,19 @@ export const RECEIVE_TRIP = "RECEIVE_TRIP";
 export const RECEIVE_TRIPS = "RECEIVE_TRIPS";
 export const RECEIVE_TRIP_ERRORS = "RECEIVE_TRIP_ERRORS";
 export const RECEIVE_IMAGE = "RECEIVE_IMAGE";
+export const RECEIVE_LIKE = "RECEIVE_LIKE";
+import { receiveUser } from './user_actions';
+
 import {merge} from 'lodash';
 
-  export const createTrip = trip => dispatch => (
-      TripAPIUtil.createTrip(trip)
+export const createTrip = trip => dispatch => (
+    TripAPIUtil.createTrip(trip)
+    .then(newTrip => dispatch(receiveCurrentTrip(newTrip)),
+    err => dispatch(receiveTripErrors(err.responseJSON)))
+  );
+
+  export const updateTrip = trip => dispatch => (
+      TripAPIUtil.updateTrip(trip)
       .then(newTrip => dispatch(receiveCurrentTrip(newTrip)),
       err => dispatch(receiveTripErrors(err.responseJSON)))
     );
@@ -23,13 +32,14 @@ export const fetchTrips = trips => dispatch => (
 
 export const deleteTrip = trip => dispatch => (
   TripAPIUtil.deleteTrip(trip)
-    .then(newTrips => dispatch(receiveTrips(newTrips))
+    .then(user => dispatch(receiveUser(user))
 ));
 
 export const createImage = image => dispatch => (
   TripAPIUtil.createImage(image)
     .then(newImage => dispatch(receiveImage(newImage)))
 );
+
 
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,

@@ -1,8 +1,9 @@
 class Api::LikesController < ApplicationController
 
   def create
-    @like = Like.new(like_params)
+    @like = Like.new(user_id: current_user.id, trip_id: params[:trip_id])
     if @like.save
+      @user = User.find(current_user.id)
       render 'api/users/show'
     else
       render(
@@ -13,13 +14,11 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
-
+    @like = Like.find_by(user_id: current_user.id, trip_id: params[:trip_id])
+    @like.destroy
+    @user = User.find(current_user.id)
+    render 'api/users/show'
   end
 
-  private
-
-  def image_params
-    params.require(:like).permit(:user_id, :trip_id)
-  end
 
 end

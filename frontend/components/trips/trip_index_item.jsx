@@ -5,6 +5,11 @@ import {merge } from 'lodash';
 class TripIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = merge({
+      title: "",
+      location: "",
+      description: ""
+    }, this.props.trip);
     this.deleteTrip = this.deleteTrip.bind(this);
   }
 
@@ -14,7 +19,7 @@ class TripIndexItem extends React.Component {
         <nav className="image-buttons-container">
           <ul>
             <li className="link-to-user">
-              HIIIIIIIII
+
             </li>
             <li className="link-delete">
               {deleteButton}
@@ -27,16 +32,23 @@ class TripIndexItem extends React.Component {
     deleteTrip() {
       const tripId = this.props.trip.id;
       this.props.deleteTrip(tripId);
+      let user = this.props.currentUser.id;
+      this.props.router.push(`users/${user}/trips`);
     }
 
     deleteButton() {
       if (this.props.currentUser !== null &&
         this.props.currentUser.id === this.props.user.id) {
           return (
-            <div>
-              <button
+            <div className="delete-button-box">
+              <button className="deleteButton"
                 onClick={this.deleteTrip}>Delete Trip</button>
             </div>
+            // <div className="update-button-box">
+            //   <button className="updateButton"
+            //     onClick={this.updateTrip}>Delete Trip</button>
+            //
+            // </div>
           );
         } else {
           return (
@@ -52,7 +64,10 @@ class TripIndexItem extends React.Component {
         return (
           <section className="trip-index-item-wrapper">
             <div className="trip-index-item-photo-wrapper">
-              <img src={image}/>
+              <div className="photo-container">
+                  <img src={image}/>
+              </div>
+
             </div>
             <div className="trip-index-item-details">
 
@@ -60,8 +75,8 @@ class TripIndexItem extends React.Component {
 
                 <div>
                   <div className="trip-index-item-box">
-                    <section className="user-navatar-container">
-                      <div className="user-navatar">
+                    <section className="user-navatar-container-item">
+                      <div className="user-navatar-item">
                         <img src= {this.props.user.thumbnail} />
                       </div>
                     </section>
@@ -77,7 +92,14 @@ class TripIndexItem extends React.Component {
                     </div>
                   </div>
                   <div className="trip-index-item-box">
-                    <div className="trip-location">{this.props.trip.location}</div>
+                    <div className="trip-location">
+                      <div className="location-marker">
+                          <i className="fa fa-map-marker fa-lg" aria-hidden="true"></i>
+                      </div>
+                      <div className="location-info">
+                        {this.props.trip.location}
+                      </div>
+                    </div>
                   </div>
                   <div className="trip-index-item-box">
                     <div className="trip-index-item-description">
@@ -92,15 +114,10 @@ class TripIndexItem extends React.Component {
 
               </div>
             </div>
+
           </section>
         );
       }
     }
 
     export default TripIndexItem;
-
-
-
-    // <Link to={`/users/${this.state.user_id}`}>
-    //   Back to User Page
-    // </Link>

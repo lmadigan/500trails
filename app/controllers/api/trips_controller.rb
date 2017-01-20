@@ -15,12 +15,14 @@ class Api::TripsController < ApplicationController
   def destroy
    @trip = current_user.trips.find(params[:id])
    @trip.destroy
+   @user = User.find(current_user.id)
    render 'api/users/show'
   end
 
   def update
     @trip = Trip.find(params[:id])
     if @trip.update(trip_params)
+      @user = User.find(id: currentUser.id)
       render 'api/users/show'
     else
       render(json: ["This cannot be updated"], status: 401)
@@ -28,7 +30,7 @@ class Api::TripsController < ApplicationController
   end
 
   def index
-    @trips = Trip.includes(:user).where(user_id: currentUser.id).all
+    @trips = Trip.includes(:user).where.not(user_id: current_user.id).all.shuffle
     render :index
   end
 
@@ -42,7 +44,4 @@ class Api::TripsController < ApplicationController
     params.require(:trip).permit(:title, :description, :user_id, :location)
   end
 
-  # def image_url
-  #   params.require(:trip).permit(:image_url)
-  # end
 end

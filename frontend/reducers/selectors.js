@@ -1,4 +1,4 @@
-import { values } from 'lodash';
+import { values, shuffle } from 'lodash';
 
 export const selectTrip = ({trips}, id) => {
    const trip = trips[id] || {};
@@ -6,5 +6,9 @@ export const selectTrip = ({trips}, id) => {
 };
 
 export const selectTrips = ({trips}) => {
-   return _.values(trips)
+   return _.values(trips);
+};
+
+export const selectFeed = (trips) => {
+  return _.values(trips);
 };
