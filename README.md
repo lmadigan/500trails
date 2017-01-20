@@ -1,63 +1,45 @@
-# 500trails
+# 500Trails
 
-[Heroku link][heroku]
+[Trails500][500Trails] is a web application meant for users to share experiences through photos. Inspired by 500px, 500Trails allows users to upload pictures, link them to trips, and discover trips taken by other users. Sights, experiences, and adventures are meant to be shared. Let's broaden our horizons.  Join Trails500 and see where it can take you.
 
-[Trello link][trello]
+Trails500 is a personal project by Lauren Madigan.
 
-[heroku]: https://trails500.herokuapp.com
-[trello]: https://trello.com/b/SeQI1hwv/500trails
+![Chime home page: http://www.chime.audio][home page]
 
-## Minimum Viable Product
+## Features
 
-500trails is a web application inspired by 500px built using Ruby on Rails
-and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
-following criteria with smooth, bug-free navigation, adequate seed data and
-sufficient styling:
-
-- [ ] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
-- [ ] Home Feed
-- [ ] Photo Upload for New Trips
-- [ ] User Profile Page
-- [ ] Save other Users' Trips (follows)
-- [ ] Production README
-
-## Design Docs
-* [View Wireframes][wireframes]
-* [React Components][components]
-* [API endpoints][api-endpoints]
-* [DB schema][schema]
-* [Sample State][sample-state]
-
-[wireframes]: ./wireframes
-[components]: ./component-hierarchy.md
-[sample-state]: ./sample-state.md
-[api-endpoints]: ./api-endpoints.md
-[schema]: ./schema.md
-
-## Implementation Timeline
-
-### Phase 1: Backend setup and Front End User Authentication (2 days)
-
-**Objective:** Functioning rails project with front-end Authentication
-
-### Phase 2: Trip Model, API, and components (3 days)
-
-**Objective:** Trips can be created, updated, destroyed through the API. Includes
-saved trips. This includes photo upload for trips using Cloudinary.
-
-###Phase 3: Creating User Profile Page And Splash Page (2 day)
-
-**Objective:** User profile page includes user's trips and saved trips.
-
-###Phase 5: Creating User Home Feed Page (2 days)
-
-**Objective:** Functioning homepage with a discover section seeded with
-  photos linked to exciting trips. Includes trips user has saved, as well as suggested ones.
+- User accounts with secure authentication
+- Photo Upload and picture sharing
+- User Profile Page with a User's own trips
+- Ability to Save other people's trips
+-
 
 
-### Bonus Features (TBD)
-- [ ] Google Map containing locations of user's trips
-- [ ] Search Trip By Location
-- [ ] Multiple Photo Upload for trips
-- [ ] Drag and Drop Photo Upload
+![demo_user's tracks: http://www.chime.audio/demo_user/tracks][tracks]
+
+## Project Design
+
+Chime was designed and built in three weeks.
+
+A [proposal][proposal] was designed to ensure maximum efficiency and productivity during development.
+
+A [database schema][schema] was prepared alongside the design proposal.
+
+## Technology
+
+Trails500 is a single-page application built on Rails and React.js, with many dependencies in both the backend and the frontend.
+
+- [Backend technology][backend]
+- [Frontend technology][frontend]
+- Image Storage via Cloudinary
+
+
+[500Trails]: https://trails500.herokuapp.com
+[home page]: ./docs/images/home_page.png "Chime home page"
+[tracks]: ./docs/images/tracks.png "A user's tracks"
+[proposal]: ./docs/proposal.md
+[schema]: ./docs/schema.md
+[backend]: ./docs/backend.md
+[frontend]: ./docs/frontend.md
+[file storage]: ./docs/file_storage.md
+[future]: ./docs/future.md

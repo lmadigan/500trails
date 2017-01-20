@@ -21,9 +21,13 @@ class TripForm extends React.Component {
     this.redirectToUserProfile = this.redirectToUserProfile.bind(this);
   }
 
+  componentDidMount() {
+    this.clearErrors();
+  }
+
 
   redirectToUserProfile() {
-    this.props.router.push(`/users/${this.props.currentUser.id}`);
+    this.props.router.push(`/users/${this.props.currentUser.id}/trips`);
   }
 
   handleSubmit(e) {
@@ -52,6 +56,16 @@ class TripForm extends React.Component {
       );
     }
   }
+
+  clearErrors(){
+    // defer the execution of anonymous function for
+    // 3 seconds and go to next line of code.
+    let errorHandle = this.props.clearErrors;
+    setTimeout(function(){
+        errorHandle();
+    }, 6000);
+  }
+
 
 
 uploadPhoto(e) {

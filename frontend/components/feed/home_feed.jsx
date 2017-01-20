@@ -12,14 +12,12 @@ class HomeFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false,
-      followed: false,
+      modalOpen: false
     };
     this.itemsList = this.itemsList.bind(this);
     this._handleClick = this._handleClick.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
     this.saveTrip = this.saveTrip.bind(this);
-    this.alreadySaved = this.alreadySaved.bind(this);
     this.locationMarker = this.locationMarker.bind(this);
     this.deleteSave = this.deleteSave.bind(this);
     this.handleIconClick = this.handleIconClick.bind(this);
@@ -50,26 +48,14 @@ class HomeFeed extends React.Component {
 
   saveTrip(trip) {
     this.props.createLike(trip.id);
-    this.setState({followed: true});
   }
 
   deleteSave(trip) {
     this.props.deleteLike(trip.id);
-    this.setState({followed: false});
-  }
-
-  alreadySaved(trip) {
-    let savedTrips = this.props.currentUser.liked_trips ;
-    for ( let i = 0; i < savedTrips.length; i++ ) {
-      if ( trip.id === savedTrips[i].id ) {
-        return true ;
-      }
-    }
-    return false ;
   }
 
   handleIconClick(trip) {
-    if ( this.alreadySaved(trip) ) {
+    if ( trip.save ) {
       this.deleteSave(trip);
     } else {
       this.saveTrip(trip);
@@ -78,7 +64,8 @@ class HomeFeed extends React.Component {
 
   locationMarker(trip) {
 
-    var liClasses = this.state.followed ? `fa fa-road fa-lg saved-place-icon` : 'fa fa-road fa-lg';
+    let save =  trip.liked  ? ' saved-place-icon' : '';
+    var liClasses = `fa fa-road fa-lg${save}`;
    return (
      <div onClick={() => this.handleIconClick(trip)} className="road-icon">
        <i className={liClasses}  aria-hidden="true"></i>
@@ -90,8 +77,9 @@ class HomeFeed extends React.Component {
 
   itemsList() {
     let location = this.locationMarker ;
+    let bool = this.props.feedTrips ? true : false;
     return this.props.feedTrips.map(function(trip, idx){
-      let road = location(trip);
+      let road = bool ? location(trip) : "";
       return (
         <div className="feed-item-div" key={idx}>
           <img onClick={() => this._handleClick(trip)}

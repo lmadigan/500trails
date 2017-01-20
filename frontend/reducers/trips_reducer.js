@@ -1,12 +1,11 @@
 import  { RECEIVE_TRIP, RECEIVE_TRIPS,
-  RECEIVE_TRIP_ERRORS, RECEIVE_IMAGE } from '../actions/trip_actions';
+  RECEIVE_TRIP_ERRORS, RECEIVE_IMAGE, CLEAR_TRIP_ERRORS } from '../actions/trip_actions';
 import merge from 'lodash/merge';
 
 
 const TripsReducer = (state = {} , action) => {
   Object.freeze(state);
   let newState = merge({}, state);
-
   switch (action.type) {
     case RECEIVE_TRIP:
       return merge({}, state, {
@@ -21,6 +20,8 @@ const TripsReducer = (state = {} , action) => {
     case RECEIVE_TRIP_ERRORS:
       const errors = action.errors;
       return merge({}, state, { errors });
+    case CLEAR_TRIP_ERRORS:
+      return merge({}, state);
     default:
       return state;
     }

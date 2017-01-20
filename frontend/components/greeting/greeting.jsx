@@ -14,6 +14,8 @@ class Greeting extends React.Component {
     this._handleClick = this._handleClick.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
     this.logoutAndRedirect = this.logoutAndRedirect.bind(this);
+    this.renderErrorMessages = this.renderErrorMessages.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
     this.state = {
       guest: {
         user_name: "guest",
@@ -23,6 +25,11 @@ class Greeting extends React.Component {
       // newTrip: false
     };
   }
+
+
+  	componentWillUpdate() {
+      this.clearErrors();
+  	}
 
   _handleClick(form) {
     this.setState({ modalOpen: true });
@@ -40,7 +47,7 @@ class Greeting extends React.Component {
   loginGuest() {
     const user = Object.assign({}, this.state.guest);
     this.props.login({user});
-    this.props.router.push(`users/2`);
+    this.props.router.push(`users/2/trips`);
   }
 
   sessionLinks() {
@@ -96,8 +103,33 @@ class Greeting extends React.Component {
     );
   }
 
-  render () {
 
+  clearErrors(){
+    // defer the execution of anonymous function for
+    // 3 seconds and go to next line of code.
+    debugger
+    let errorHandle = this.props.clearTripErrors;
+    setTimeout(function(){
+        errorHandle();
+    }, 6000);
+  }
+
+  renderErrorMessages() {
+    if (this.props.errors) {
+      return(
+        <ul>
+          {this.props.errors.map((error, ind) => (
+            <li key={`error-${ind}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  }
+
+  render () {
+    let errors = this.props.errors ? this.renderErrorMessages() : "";
     let personalGreeting = "";
     if ( this.props.currentUser ) {
       personalGreeting = this.personalGreeting();
@@ -110,27 +142,32 @@ class Greeting extends React.Component {
     }
 
     return (
-      <header className="top-nav-header">
-        <nav className="left-nav">
-          <ul className="F00trails-nav-header">
-            <li><Link className="link500"to="/">500TRAILS</Link></li>
-            <li>DISCOVER</li>
-            <li>LOCATION</li>
-          </ul>
-        </nav>
-          {personalGreeting}
-          <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={this._onModalClose}
-            style={customStyles}
-            onAfterOpen={this.onModalOpen}
-            contentLabel="Modal">
-            <TripForm currentUser={this.props.currentUser}
-                createTrip={this.props.createTrip}
-                closeModal={this._onModalClose}/>
-          <br/>
-          </Modal>
-      </header>
+      <div>
+        <header className="top-nav-header">
+          <nav className="left-nav">
+            <ul className="F00trails-nav-header">
+              <li><Link className="link500"to="/">500TRAILS</Link></li>
+              <li><Link className="discover"to="/discover">DISCOVER</Link></li>
+            </ul>
+          </nav>
+            {personalGreeting}
+            <Modal
+              isOpen={this.state.modalOpen}
+              onRequestClose={this._onModalClose}
+              style={customStyles}
+              onAfterOpen={this.onModalOpen}
+              contentLabel="Modal">
+              <TripForm currentUser={this.props.currentUser}
+                  createTrip={this.props.createTrip}
+                  closeModal={this._onModalClose}
+                  clearErrors={this.props.clearTripErrors}/>
+            <br/>
+            </Modal>
+
+        </header>
+        {errors}
+      </div>
+
     );
   }
 }
@@ -139,3 +176,17 @@ export default withRouter(Greeting);
 
 
 // <button onClick={this._onModalClose}>CLOSE</button>
+
+
+
+
+
+// errors() {
+//   if (this.props.errors) {
+//     return (
+//       this.props.errors.map(error => {
+//         return (<li className="error" key={error}>{error}</li>);
+//       })
+//     );
+//   }
+// }

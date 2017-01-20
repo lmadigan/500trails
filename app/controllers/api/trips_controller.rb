@@ -4,7 +4,8 @@ class Api::TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     if @trip.save
       Image.create(trip_id: @trip.id, image_url: params[:trip][:image_url])
-      render :show
+      @user = User.find(current_user.id)
+      render 'api/users/show'
     else
       render(
       json: @trip.errors.full_messages, status: 422

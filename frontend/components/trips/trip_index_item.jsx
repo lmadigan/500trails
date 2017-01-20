@@ -33,6 +33,7 @@ class TripIndexItem extends React.Component {
       const tripId = this.props.trip.id;
       this.props.deleteTrip(tripId);
       let user = this.props.currentUser.id;
+      this.props.closeModal();
       this.props.router.push(`users/${user}/trips`);
     }
 

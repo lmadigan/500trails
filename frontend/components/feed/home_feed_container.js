@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
 import HomeFeed from './home_feed';
 import { selectFeed } from '../../reducers/selectors';
-import { fetchTrips, updateTrip } from '../../actions/trip_actions';
-import { createLike, deleteLike } from '../../actions/user_actions';
+import { fetchTrips, updateTrip, createLike } from '../../actions/trip_actions';
+import { deleteLike } from '../../actions/user_actions';
 
 
 

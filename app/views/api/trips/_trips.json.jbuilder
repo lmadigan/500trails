@@ -5,6 +5,9 @@ json.images trip.images
 
 json.trip_user trip.user
 
-# json.images do
-#   json.partial! 'api/images/image', collection: trip.images, as: :image
-# end
+
+if current_user && current_user.liked_trips.include?(trip)
+  json.liked true
+else
+  json.liked false
+end

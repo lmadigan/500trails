@@ -17,6 +17,7 @@ const Root = ({ store }) => (
         <Route path="login" component={ SessionFormContainer } />
         <Route path="signup" component={ SessionFormContainer } />
         <Route path="trips/new" component={TripFormContainer} />
+        <Route path="/discover" component={HomeFeed} />
         <Route path="trips/:tripId" component={TripIndexItemContainer}/>
         <Route path="users/:userId" component={HomeFeed} />
         <Route path="users/:userId/trips" component={UserProfileContainer} />

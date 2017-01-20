@@ -11,13 +11,3 @@ export const receiveUser = user => ({
   type: RECEIVE_USER,
   user
 });
-
-export const createLike = data => dispatch => (
-  TripAPIUtil.createLike(data)
-    .then(user => dispatch(receiveUser(user)))
-);
-
-export const deleteLike = data => dispatch => (
-  TripAPIUtil.deleteLike(data)
-    .then(user => dispatch(receiveUser(user)))
-);

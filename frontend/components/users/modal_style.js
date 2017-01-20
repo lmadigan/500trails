@@ -6,7 +6,7 @@ export const customStyles = {
     right: 0,
     bottom: 0,
     backgroundColor: 'rgba(123, 123, 123, 0.85)',
-    zIndex: 2000,
+    zIndex: 2000
   },
   content : {
     position        : 'absolute',

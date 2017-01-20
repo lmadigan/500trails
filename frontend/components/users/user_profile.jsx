@@ -21,7 +21,7 @@ class UserProfile extends React.Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchUser(this.props.userId);
   }
 
@@ -39,6 +39,7 @@ class UserProfile extends React.Component {
   onModalOpen() {
     customStyles.content.opacity = 100;
   }
+
 
   _handleClick(trip) {
     const trips = this.props.trips[this.props.trips.length-1];
@@ -143,7 +144,8 @@ class UserProfile extends React.Component {
               updateTrip={this.props.updateTrip}
               currentUser={this.props.currentUser}
               user={this.state.user}
-              trip={this.state.trip}/>
+              trip={this.state.trip}
+              closeModal={this._onModalClose}/>
           </Modal>
 
       </div>
