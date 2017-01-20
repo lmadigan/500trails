@@ -13,9 +13,9 @@ Trails500 is a personal project by Lauren Madigan.
 - User Profile Page with a User's own trips
 - Ability to Save other people's trips
 -
+![demo_user's profile][profile]
 
-
-![demo_user's tracks: http://www.chime.audio/demo_user/tracks][tracks]
+![demo_user's tracks: http://www.chime.audio/demo_user/tracks]
 
 ## Project Design
 
