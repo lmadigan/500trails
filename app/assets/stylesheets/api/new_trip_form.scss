@@ -60,17 +60,20 @@
   width: auto;
 }
 
+
 .trip-form-input-area {
-  display: flex;
-  flex-direction: column;
-  border-left: grey;
-  width: 40%
+  margin-right: 0px;
+margin-left: 40px;
+border-radius: 4px;
+padding: 20px;
+/* padding-bottom: 40px; */
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 
 .input-type {
   padding-top: 20px;
-  padding-right: 15px;
-  padding-left: 15px;
   width: 100%;
 }
 

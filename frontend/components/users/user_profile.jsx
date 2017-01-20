@@ -47,7 +47,6 @@ class UserProfile extends React.Component {
     } else {
       this.setState({user: this.props.currentUser}) ;
     }
-    debugger
     this.setState({ modalOpen: true });
     this.setState({trip: trip});
     this.setState({tripId: trip.id});

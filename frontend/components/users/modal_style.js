@@ -17,7 +17,8 @@ export const customStyles = {
      transition      : "opacity 0.5s",
      maxWidth        : '1250px',
      maxHeight       : '830px',
-     border          : 'none'
+     border          : 'none',
+     overflow        : 'hidden'
 
   }
 };

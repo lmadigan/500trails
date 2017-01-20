@@ -24,6 +24,8 @@
 }
 
 
+
+
 .background-photo-container img {
   position: fixed;
 }
@@ -36,7 +38,7 @@
 }
 
 .scroll-div {
-  background-color: #FEFCFC;
+  background-color: #f5f5f5;
   z-index: 5;
 }
 
@@ -66,7 +68,7 @@
   // width: 100%;
   padding:20px;
   height: 80px;
-  background: #FEFCFC;
+  background: #f5f5f5;
   justify-content: center;
   display: flex;
 }
@@ -148,7 +150,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #F4F4F4;
+  background: #f5f5f5;
 }
 
 .nav-elements li:hover {

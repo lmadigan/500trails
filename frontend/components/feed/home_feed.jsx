@@ -12,7 +12,8 @@ class HomeFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false
+      modalOpen: false,
+      followed: false,
     };
     this.itemsList = this.itemsList.bind(this);
     this._handleClick = this._handleClick.bind(this);
@@ -49,10 +50,12 @@ class HomeFeed extends React.Component {
 
   saveTrip(trip) {
     this.props.createLike(trip.id);
+    this.setState({followed: true});
   }
 
   deleteSave(trip) {
     this.props.deleteLike(trip.id);
+    this.setState({followed: false});
   }
 
   alreadySaved(trip) {
@@ -75,8 +78,7 @@ class HomeFeed extends React.Component {
 
   locationMarker(trip) {
 
-    let save =  this.alreadySaved(trip)  ? ' saved-place-icon' : '';
-    var liClasses = `fa fa-road fa-lg${save}`;
+    var liClasses = this.state.followed ? `fa fa-road fa-lg saved-place-icon` : 'fa fa-road fa-lg';
    return (
      <div onClick={() => this.handleIconClick(trip)} className="road-icon">
        <i className={liClasses}  aria-hidden="true"></i>

@@ -18,7 +18,8 @@ export const customStyles = {
      padding         : '20px',
      zIndex          : 2001,
      opacity         : '0',
-     transition      : "opacity 0.5s"
+     transition      : "opacity 0.5s",
+     overflow        : 'hidden'
   }
 };
 
