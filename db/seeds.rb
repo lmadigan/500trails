@@ -227,4 +227,54 @@ user_id: 7)
 Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812934/500trails/ballachulish-united-kingdom.jpg",
 trip_id: 36)
 
+Trip.create(title: "Lake McDonald", description:"A beautiful lake to go kayaking in with mountains surrounding on all sides. Take a dip to cool off
+and go for a hike on one of the many trails surrounding the lake.", location:"Glacier National Park, Montana.",
+user_id: 3)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954066/500trails/glacier_national_park_lake_mcDOnald.jpg",
+trip_id: 37)
+
+Trip.create(title: "Homer Tunnel", description:"Worth pausing before going through the tunnel. fantastic scenery on both side of the tunnel. Allow plenty of time as it may take
+you 20 minutes to get through on a busy day. Plenty of space to stop so do so.", location:"Milford Sound, New Zealand",
+user_id: 4)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954059/500trails/homer_tunel_fiorland.jpg",
+trip_id: 38)
+
+Trip.create(title: "Sani Pass, Mkhomazi Wilderness area", description:"There might be higher peaks in Africa, but you won't find a pub at a higher elevation than the one at Sani Mountain Lodge (a large painted sign even boasts
+The Highest Pub in Africa). This place teeters just at the edge
+ of these cliffs, on what feels like the edge of the world. ", location:"South AfricA",
+user_id: 5)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954066/500trails/hluhluwegamereserve.jpg",
+trip_id: 39)
+
+Trip.create(title: "Les Îles-de-la-Madeleine", description:"So many birds on that rock!!!", location:" Quebec, Canada",
+user_id: 6)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954134/500trails/les_fles-de-la-Madeleine_canada.jpg",
+trip_id: 40)
+
+Trip.create(title: "El Chaltén", description:"Hiking to the summit", location:"Argentina",
+user_id: 7)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954113/500trails/el_chaten_argentina.jpg",
+trip_id: 41)
+
+Trip.create(title: "San Juan del SUr", description:"Situated on Nicaruaga's southern Pacific coast, this funky beach town
+is sure to be a great time. With a year-round hot climate (about 85 F on average) and nice sea breezes, the lifestyle here is
+the proverbial beach life made famous by the original surfing kahunas who found the waves first and spread the word. No sleeves
+or long pants needed.", location:"Nicaragua",
+user_id: 3)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954094/500trails/nicaragua.jpg",
+trip_id: 42)
+
+
+Trip.create(title: "", description:"", location:"",
+user_id: 4)
+Image.create(image_url: "",
+trip_id: 40)
+
+
+Trip.create(title: "", description:"", location:"",
+user_id: 5)
+Image.create(image_url: "",
+trip_id: 40)
+
+
 # //aoraki mount cook new zealand

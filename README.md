@@ -19,7 +19,7 @@ Trails500 is a personal project by Lauren Madigan.
 
 ## Project Design
 
-Chime was designed and built in three weeks.
+Trails500 was designed and built in two weeks.
 
 A [proposal][proposal] was designed to ensure maximum efficiency and productivity during development.
 
@@ -36,7 +36,7 @@ Trails500 is a single-page application built on Rails and React.js, with many de
 
 [500Trails]: https://trails500.herokuapp.com
 [home page]: ./docs/images/home_page.png "Chime home page"
-[tracks]: ./docs/images/tracks.png "A user's tracks"
+[profile]: ./docs/images/profile-page.png "A user's tracks"
 [proposal]: ./docs/proposal.md
 [schema]: ./docs/schema.md
 [backend]: ./docs/backend.md
