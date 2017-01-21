@@ -17,9 +17,7 @@ class HomeFeed extends React.Component {
     this.itemsList = this.itemsList.bind(this);
     this._handleClick = this._handleClick.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
-    this.saveTrip = this.saveTrip.bind(this);
     this.locationMarker = this.locationMarker.bind(this);
-    this.deleteSave = this.deleteSave.bind(this);
     this.handleIconClick = this.handleIconClick.bind(this);
   }
 
@@ -46,19 +44,13 @@ class HomeFeed extends React.Component {
     this.setState({ modalOpen: true });
   }
 
-  saveTrip(trip) {
-    this.props.createLike(trip.id);
-  }
-
-  deleteSave(trip) {
-    this.props.deleteLike(trip.id);
-  }
-
   handleIconClick(trip) {
-    if ( trip.save ) {
-      this.deleteSave(trip);
+
+    if ( trip.liked ) {
+      console.log("deletingLike");
+      this.props.deleteLike(trip.id);
     } else {
-      this.saveTrip(trip);
+      this.props.createLike(trip.id);
     }
   }
 

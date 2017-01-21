@@ -45,10 +45,15 @@ export const createLike = data => dispatch => (
     .then(trip => dispatch(receiveCurrentTrip(trip)))
 );
 
-export const deleteLike = data => dispatch => (
-  TripAPIUtil.deleteLike(data)
-    .then(trip => dispatch(receiveCurrentTrip(trip)))
-);
+export const deleteLike = data => dispatch => {
+  debugger
+  return (
+    TripAPIUtil.deleteLike(data)
+      .then(trip => dispatch(receiveCurrentTrip(trip)))
+  );
+
+};
+
 
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,
