@@ -90,20 +90,29 @@ class UserProfile extends React.Component {
   render() {
     console.log(this.props);
     console.log(this.state);
+    let background = this.props.user.background;
+    if (!this.props.user.background_photo) {
+      background = "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954059/500trails/homer_tunel_fiorland.jpg";
+    }
+    let thumbnail = this.props.user.thumbnail;
+
+    if ( !this.props.user.thumbnail) {
+      thumbnail = "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg";
+    }
 
     let userTrips = (this.props.user.images === undefined ) ?  "" : this.tripsToShow() ;
     return (
       <div className="user-profile-container">
 
         <div className="background-photo-container">
-            <img src={this.props.user.background_photo} />
+            <img src={background} />
             </div>
 
         <div className="scroll-div">
           <div className="user-header-container">
             <section className="user-navatar-container">
               <div className="user-navatar">
-                <img src= {this.props.user.thumbnail} />
+                <img src={thumbnail}/>
               </div>
 
             </section>

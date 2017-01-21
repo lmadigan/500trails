@@ -4,7 +4,7 @@
 
 Trails500 is a personal project by Lauren Madigan.
 
-![Chime home page: http://www.chime.audio][home page]
+![][home page]
 
 ## Features
 
@@ -12,7 +12,7 @@ Trails500 is a personal project by Lauren Madigan.
 - Photo Upload and picture sharing
 - User Profile Page with a User's own trips
 - Ability to Save other people's trips
--
+
 ![demo_user's profile][profile]
 
 ![demo_user's tracks: http://www.chime.audio/demo_user/tracks]

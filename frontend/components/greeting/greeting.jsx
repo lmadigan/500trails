@@ -27,10 +27,6 @@ class Greeting extends React.Component {
   }
 
 
-  	componentWillUpdate() {
-      this.clearErrors();
-  	}
-
   _handleClick(form) {
     this.setState({ modalOpen: true });
   }
@@ -107,7 +103,6 @@ class Greeting extends React.Component {
   clearErrors(){
     // defer the execution of anonymous function for
     // 3 seconds and go to next line of code.
-    debugger
     let errorHandle = this.props.clearTripErrors;
     setTimeout(function(){
         errorHandle();

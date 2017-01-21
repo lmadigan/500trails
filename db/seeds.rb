@@ -243,7 +243,7 @@ Trip.create(title: "Sani Pass, Mkhomazi Wilderness area", description:"There mig
 The Highest Pub in Africa). This place teeters just at the edge
  of these cliffs, on what feels like the edge of the world. ", location:"South AfricA",
 user_id: 5)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954066/500trails/hluhluwegamereserve.jpg",
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954123/500trails/paniPass_mkhomaziWildernass.jpg",
 trip_id: 39)
 
 Trip.create(title: "Les Îles-de-la-Madeleine", description:"So many birds on that rock!!!", location:" Quebec, Canada",
@@ -265,16 +265,21 @@ Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v14849
 trip_id: 42)
 
 
-Trip.create(title: "", description:"", location:"",
+Trip.create(title: "Hluhluwe Game Reserve ", description:"We stayed at a lodge called Gqoyeni lodge .
+This is a beautiful private lodge on the river . There are 5 X 2 sleeper rooms with a dining / kitchen facility linked by a boardwalk. This lodged is unfenced.
+ Lions , elephants , hyena and rhino are regularly seen from the lodge", location:"Hluhluwe–Imfolozi Park",
 user_id: 4)
-Image.create(image_url: "",
-trip_id: 40)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954066/500trails/hluhluwegamereserve.jpg",
+trip_id: 43)
 
 
-Trip.create(title: "", description:"", location:"",
+Trip.create(title: "Golden Hour", description:"A walk through the trees", location:"Tarakai, New Zealand",
 user_id: 5)
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954164/500trails/taranaki.jpg",
+trip_id: 44)
+
+Trip.create(title: "Surf's Up", description:"", location:"",
+user_id: 6)
 Image.create(image_url: "",
-trip_id: 40)
-
-
+trip_id: 45)
 # //aoraki mount cook new zealand

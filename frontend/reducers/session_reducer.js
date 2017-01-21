@@ -16,7 +16,7 @@ switch (action.type) {
     const errors = action.errors;
     return merge({}, _nullState, { errors });
   case CLEAR_ERRORS:
-    return merge({}, _nullState);
+    return merge({}, state);
   default:
     return state;
   }
