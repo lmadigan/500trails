@@ -15,7 +15,6 @@ Trails500 is a personal project by Lauren Madigan.
 
 ![demo_user's profile][profile]
 
-![demo_user's tracks: http://www.chime.audio/demo_user/tracks]
 
 ## Project Design
 
@@ -35,11 +34,9 @@ Trails500 is a single-page application built on Rails and React.js, with many de
 
 
 [500Trails]: https://trails500.herokuapp.com
-[home page]: ./docs/images/home_page.png "Chime home page"
 [profile]: ./docs/images/profile-page.png "A user's tracks"
 [proposal]: ./docs/proposal.md
 [schema]: ./docs/schema.md
 [backend]: ./docs/backend.md
 [frontend]: ./docs/frontend.md
 [file storage]: ./docs/file_storage.md
-[future]: ./docs/future.md
