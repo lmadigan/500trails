@@ -25,8 +25,6 @@ class HomeFeed extends React.Component {
     this.props.fetchTrips();
   }
 
-
-
   _onModalClose() {
     this.setState({modalOpen: false });
     customStyles.content.opacity = 0;

@@ -17,8 +17,8 @@ class Api::LikesController < ApplicationController
   def destroy
     @like = Like.find_by(user_id: current_user.id, trip_id: params[:trip_id])
     @like.destroy
-    @user = User.find(current_user.id)
-    render 'api/users/show'
+    @trips = Trip.all
+    render 'api/trips/index'
   end
 
 

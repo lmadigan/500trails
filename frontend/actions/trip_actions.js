@@ -42,14 +42,13 @@ export const createImage = image => dispatch => (
 
 export const createLike = data => dispatch => (
   TripAPIUtil.createLike(data)
-    .then(trip => dispatch(receiveCurrentTrip(trip)))
+    .then(trip => dispatch(receiveTrips(trip)))
 );
 
 export const deleteLike = data => dispatch => {
-  debugger
   return (
     TripAPIUtil.deleteLike(data)
-      .then(trip => dispatch(receiveCurrentTrip(trip)))
+      .then(trip => dispatch(receiveTrips(trip)))
   );
 
 };

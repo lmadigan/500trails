@@ -32,9 +32,9 @@ class Api::TripsController < ApplicationController
 
   def index
     if current_user
-      @trips = Trip.includes(:user).where.not(user_id: current_user.id).all.shuffle
+      @trips = Trip.includes(:user).where.not(user_id: current_user.id).all
     else
-      @trips = Trip.includes(:user).all.shuffle
+      @trips = Trip.includes(:user).all
     end
     render :index
   end
