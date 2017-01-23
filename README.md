@@ -11,7 +11,7 @@ Trails500 is a personal project by Lauren Madigan.
 - User accounts with secure authentication
 - Photo Upload and picture sharing
 - User Profile Page with a User's own trips
-- Ability to Save other people's trips
+- Ability to Save other user's trips
 
 ![demo_user's profile][profile]
 
@@ -32,6 +32,10 @@ Trails500 is a single-page application built on Rails and React.js, with many de
 - [Frontend technology][frontend]
 - Image Storage via Cloudinary
 
+## APIs
+
+- Cloudinary
+
 
 [500Trails]: https://trails500.herokuapp.com
 [profile]: ./docs/images/profile-page.png "A user's tracks"
@@ -39,4 +43,3 @@ Trails500 is a single-page application built on Rails and React.js, with many de
 [schema]: ./docs/schema.md
 [backend]: ./docs/backend.md
 [frontend]: ./docs/frontend.md
-[file storage]: ./docs/file_storage.md

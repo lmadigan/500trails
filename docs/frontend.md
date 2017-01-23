@@ -1,25 +1,7 @@
 # Frontend
 
-As a single-page application, Chime utilizes the React.js framework and follows the Flux architecture to deliver the frontend.
-
-## npm
-
-
-
-## Webpack
-
-
-
-## React & Flux
-
-
-
-## jQuery
-
-
-## Bootstrap & Sass
-
-
+JavaScript, React.js, Redux, HTML5
+NPM, Webpack, Jquery
 
 ## Others
 
