@@ -42,7 +42,7 @@ class TripIndexItem extends React.Component {
         this.props.currentUser.id === this.props.user.id) {
           return (
             <div className="delete-button-box">
-              <button className="deleteButton"
+              <button className="delete-button"
                 onClick={this.deleteTrip}>Delete Trip</button>
             </div>
             // <div className="update-button-box">
@@ -75,18 +75,20 @@ class TripIndexItem extends React.Component {
               <div className="trip-index-item-writing">
 
                 <div>
-                  <div className="trip-index-item-box">
-                    <section className="user-navatar-container-item">
-                      <div className="user-navatar-item">
-                        <img src= {this.props.user.thumbnail} />
+                  <Link to={`/users/${this.props.user.id}/trips`}>
+                    <div className="trip-index-item-box">
+                      <section className="user-navatar-container-item">
+                        <div className="user-navatar-item">
+                          <img src= {this.props.user.thumbnail} />
+                        </div>
+                      </section>
+                      <div className="trip-index-item-user">
+                        <h1>
+                          {this.props.user.user_name}
+                        </h1>
                       </div>
-                    </section>
-                    <div className="trip-index-item-user">
-                      <h1>
-                        {this.props.user.user_name}
-                      </h1>
                     </div>
-                  </div>
+                  </Link>
                   <div className="trip-index-item-box">
                     <div className="trip-index-item-title">
                       <h1>{this.props.trip.title}</h1>

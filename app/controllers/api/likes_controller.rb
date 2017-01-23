@@ -3,8 +3,9 @@ class Api::LikesController < ApplicationController
   def create
     @like = Like.new(user_id: current_user.id, trip_id: params[:trip_id])
     if @like.save
-      @trip = Trip.find(params[:trip_id])
-      render 'api/trips/show'
+      # @trip = Trip.find(params[:trip_id])
+      @trips = Trip.all
+      render 'api/trips/index'
     else
       render(
         json: ["Invalid like request"],

@@ -14,9 +14,10 @@ switch (action.type) {
     return merge({}, _nullState, { currentUser });
   case RECEIVE_ERRORS:
     const errors = action.errors;
-    return merge({}, _nullState, { errors });
+    return merge({}, state, { errors });
   case CLEAR_ERRORS:
-    return merge({}, state);
+    const newUser = action.currentUser;
+    return merge({},  _nullState, { newUser });
   default:
     return state;
   }

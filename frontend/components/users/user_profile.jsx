@@ -90,7 +90,7 @@ class UserProfile extends React.Component {
   render() {
     console.log(this.props);
     console.log(this.state);
-    let background = this.props.user.background;
+    let background = this.props.user.background_photo;
     if (!this.props.user.background_photo) {
       background = "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954059/500trails/homer_tunel_fiorland.jpg";
     }
@@ -105,7 +105,7 @@ class UserProfile extends React.Component {
       <div className="user-profile-container">
 
         <div className="background-photo-container">
-            <img src={background} />
+            <img src={background}/>
             </div>
 
         <div className="scroll-div">

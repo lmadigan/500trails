@@ -38,8 +38,16 @@ class SessionForm extends React.Component {
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
-    this.clearErrors();
+
 	}
+
+  componentWillUpdate(nextProps) {
+    if (this.props.errors[0] !== nextProps.errors[0]) {
+      this.clearErrors();
+    }
+  }
+
+
 
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
@@ -67,6 +75,7 @@ class SessionForm extends React.Component {
   }
 
   clearErrors(){
+    // if (this.props.errors)
     // defer the execution of anonymous function for
     // 3 seconds and go to next line of code.
     let errorHandle = this.props.clearErrors;
