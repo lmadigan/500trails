@@ -7,7 +7,7 @@
 
 ## Database
 
-PostgreSQL RDBMS is a must for Heroku.
+PostgreSQL RDBMS 
 
 ## Dependencies
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html>il
   <head>
     <title>Trails</title>
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-  
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
@@ -14,7 +14,9 @@
       window.CLOUDINARY_OPTIONS = {
         cloud_name: "<%= ENV['CLOUD_NAME'] %>",
         upload_preset: "<%= ENV['UPLOAD_PRESET'] %>",
-        theme: "minimal"
+        theme: "minimal",
+        image_metatdata: 'true',
+        keep_iptc: 'true'
       };
     </script>
   </head>

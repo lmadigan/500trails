@@ -31,6 +31,7 @@ class TripForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     let userTrip = {trip: { title: this.state.title,
       description: this.state.description,
