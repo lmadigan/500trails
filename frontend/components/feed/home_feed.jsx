@@ -53,7 +53,6 @@ class HomeFeed extends React.Component {
   }
 
   locationMarker(trip) {
-
     let save =  trip.liked  ? ' saved-place-icon' : '';
     var liClasses = `fa fa-road fa-lg${save}`;
    return (
