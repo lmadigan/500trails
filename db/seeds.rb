@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user1 = User.create(user_name: "hikerdude", password: "password")
+user1 = User.create(user_name: "hikerdude", password: "password", thumbnail: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1487265887/clouds_zcjc0n.jpg")
 user2 = User.create(user_name: "guest", password: "password123", fname: "Guest", lname: "User", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
-  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484643375/IMG_0680_j4g1wb.jpg")
+  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1487268943/person_jto54x.jpg")
 
 calacapria = Trip.create(title: "Cala Capreria, Sicilia", description:"Part of Sicily's first nature reserve,
 this trail was a
@@ -15,7 +15,7 @@ glimpse at natural beauty of Sicily. About a
 mile-long hike led to this hidden beach with crystal
 clear turquoise waters.", location:"Sicily, Italy",
 user_id: user1.id)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608400/500trails/hlmbw0mrgpg-josh-felise.jpg",
+Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1487266141/capri_ue3a1i.jpg",
 trip_id: 1)
 
 
@@ -131,8 +131,8 @@ user_id: 3)
 Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812942/500trails/wilderness.jpg",
 trip_id: 20)
 
-user4 = User.create(user_name: "daviddonner", password: "password123", fname: "david", lname: "donner", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
-  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+user4 = User.create(user_name: "daviddonner", password: "password123", fname: "david", lname: "donner", thumbnail: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  background_photo:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1487265811/lady_ubqrat.jpg")
 
 #
 Trip.create(title: "Hiking my way through Russia", description:"Russia is pretty neat", location:"Krutovo, Vladimir",
@@ -155,8 +155,8 @@ user_id: 4)
 Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812940/500trails/north-cascades-national-park.jpg",
 trip_id: 24)
 
-user5 = User.create(user_name: "kat", password: "password123", fname: "Kat", lname: "Kat", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
-  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+user5 = User.create(user_name: "kat", password: "password123", fname: "Kat", lname: "Kat", thumbnail: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  background_photo:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1487265704/redcanyon_wztuhs.jpg")
 
 #
 Trip.create(title: "Mountains", description:"Peaking", location:"Monte Lidon Italy",
@@ -179,8 +179,8 @@ user_id: 5)
 Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812939/500trails/glencoe_highland_usa.jpg",
 trip_id: 28)
 
-user6 = User.create(user_name: "hunter", password: "password123", fname: "Hunter", lname: "Gatherer", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
-  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+user6 = User.create(user_name: "hunter", password: "password123", fname: "Hunter", lname: "Gatherer", thumbnail: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
+  background_photo:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
 
 #
 Trip.create(title: "Deer and Grass", description:"Peaking Deer", location:"Montana",
@@ -204,7 +204,7 @@ Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v14848
 trip_id: 32)
 
 user6 = User.create(user_name: "brownie", password: "password123", fname: "Bronwinnn", lname: "Dunsky", background_photo: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484702113/8mbdd0phxgy-joshua-earle_vlf2d4.jpg",
-  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1484812938/500trails/jxwzosxc7ka-jonas-verstuyft.jpg")
+  thumbnail:"http://res.cloudinary.com/dtnwzbeum/image/upload/v1487265684/redrocks_kvhanr.jpg")
 
 #
 Trip.create(title: "French Alps", description:"Chamonix Monte Blanc", location:"Franc",

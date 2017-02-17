@@ -152,11 +152,8 @@ uploadPhoto(e) {
   }
 
 	render() {
-    console.log(this.state);
-    console.log(this.props);
     let showTripForm = (this.state.tripForm) ? this.tripInfo() : "";
     let photo = (this.state.image_url === '') ? this.photoUpLoad() : this.photoContainer() ;
-    console.log(this.props);
     return (
       <section className="new-trip-form-container">
         {this.errors()}

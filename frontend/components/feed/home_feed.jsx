@@ -45,7 +45,6 @@ class HomeFeed extends React.Component {
   handleIconClick(trip) {
 
     if ( trip.liked ) {
-      console.log("deletingLike");
       this.props.deleteLike(trip.id);
     } else {
       this.props.createLike(trip.id);
@@ -94,7 +93,6 @@ class HomeFeed extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     let items = (this.props.feedTrips[0] === undefined) ? "" : this.itemsList();
     return (
       <section className="home-feed-container">

@@ -152,7 +152,7 @@ class UserProfile extends React.Component {
               deleteTrip={this.props.deleteTrip}
               updateTrip={this.props.updateTrip}
               currentUser={this.props.currentUser}
-              user={this.state.user}
+              user={this.props.user}
               trip={this.state.trip}
               closeModal={this._onModalClose}/>
           </Modal>
