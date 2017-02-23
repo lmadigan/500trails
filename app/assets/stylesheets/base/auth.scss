@@ -5,8 +5,12 @@
   bottom: 0;
   height: 100%;
   width: 100%;
-  background-color: #E9E9EA;
+  background-image: url("http://res.cloudinary.com/dtnwzbeum/image/upload/v1487888937/sebastien-marchand-9747_1_wtgrko.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
   display: flex;
+  border-radius: 10px;
+  opacity: 0.9;
 }
 
 .login-form-wrapper {
@@ -22,6 +26,8 @@
   display: flex;
   justify-content: center;
   background-color: white;
+  border-radius: 10px;
+  opacity: 0.8;
   top: 80px;
   vertical-align: middle;
   padding-top: 70px;
@@ -79,10 +85,7 @@
 }
 
 .field-item {
-	display: block;
-	padding-right: 5px;
-	padding-left: 5px;
-  text-align: center;
+
 }
 
 .field-item label {
