@@ -14,12 +14,14 @@ class SessionForm extends React.Component {
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.clearErrors = this.clearErrors.bind(this);
+      // this.fade = this.fade.bind(this);
   }
 
   componentWillMount() {
     let user = merge({}, this.props.currentUser);
     this.setState({currentUser: user});
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -38,7 +40,7 @@ class SessionForm extends React.Component {
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
-
+    // this.fade();
 	}
 
   componentWillUpdate(nextProps) {
@@ -47,6 +49,17 @@ class SessionForm extends React.Component {
     }
   }
 
+  // fade(){
+  //   var elem = this.refs.innernode;
+  //    // Set the opacity of the element to 0
+  //   elem.style.opacity = 0;
+  //   window.requestAnimationFrame(function() {
+  //    // Now set a transition on the opacity
+  //    elem.style.transition = "opacity 250ms";
+  //       // and set the opacity to 1
+  //    elem.style.opacity = 1;
+  //  });
+  // }
 
 
 	redirectIfLoggedIn() {
@@ -92,7 +105,7 @@ class SessionForm extends React.Component {
       <div className='loggin-form-page'>
         <section className="login-form-wrapper">
           <section className="login-error-bar">{errors}</section>
-          <div className='inner-form'>
+          <div className='inner-form' ref="innernode">
             <form onSubmit={this.handleSubmit} className='login-form'>
               <div className="login-content">
                 <h1 className="login-header">{sessionFormHeader}</h1>
@@ -125,7 +138,11 @@ class SessionForm extends React.Component {
             </form>
           </div>
         </section>
-
+        <script>
+          $(function() {
+              $(".inner-form").fadeIn(4000)
+          });
+        </script>
 
       </div>
     );

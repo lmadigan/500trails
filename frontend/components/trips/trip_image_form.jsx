@@ -16,7 +16,6 @@ class TripImages extends React.Component {
 
   upload(e) {
     e.preventDefault();
-    console.log(CLOUDINARY_OPTIONS);
     cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
     if(!error){
       console.log(results);

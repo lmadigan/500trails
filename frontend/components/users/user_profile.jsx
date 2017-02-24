@@ -46,7 +46,7 @@ class UserProfile extends React.Component {
     if (trips === "saved") {
       this.setState({user: trip.user}) ;
     } else {
-      this.setState({user: this.props.currentUser}) ;
+      this.setState({user: this.props.user}) ;
     }
     this.setState({ modalOpen: true });
     this.setState({trip: trip});

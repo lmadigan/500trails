@@ -114,13 +114,12 @@
 }
 
 .user-navatar-item {
-  padding-left: 40px;
-  padding-right: 40px;
   height: 80px;
-  width: 80px;
+  width: auto;
+  min-width: 80px;
   border-radius: 50%;
   background: transparent;
-  box-shadow: 1px 1px 8px 0px rgba(87,86,87,1);
+  box-shadow: 1px 1px 6px 0px rgba(87,86,87,1);
   overflow: hidden;
   display: flex;
   justify-content: center;
