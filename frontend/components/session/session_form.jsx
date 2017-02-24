@@ -14,7 +14,6 @@ class SessionForm extends React.Component {
       };
       this.handleSubmit = this.handleSubmit.bind(this);
       this.clearErrors = this.clearErrors.bind(this);
-      // this.fade = this.fade.bind(this);
   }
 
   componentWillMount() {
@@ -40,7 +39,6 @@ class SessionForm extends React.Component {
 
 	componentDidUpdate() {
 		this.redirectIfLoggedIn();
-    // this.fade();
 	}
 
   componentWillUpdate(nextProps) {
@@ -49,17 +47,6 @@ class SessionForm extends React.Component {
     }
   }
 
-  // fade(){
-  //   var elem = this.refs.innernode;
-  //    // Set the opacity of the element to 0
-  //   elem.style.opacity = 0;
-  //   window.requestAnimationFrame(function() {
-  //    // Now set a transition on the opacity
-  //    elem.style.transition = "opacity 250ms";
-  //       // and set the opacity to 1
-  //    elem.style.opacity = 1;
-  //  });
-  // }
 
 
 	redirectIfLoggedIn() {
@@ -98,8 +85,11 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.formType);
     const sessionFormHeader = (this.props.formType === 'login' ?
       "Log In to 500trails" : "Join 500trails");
+    const switchMessage = (this.props.formType === 'login' ?
+        "Not Registered? Create an Account!" : "Already Signed Up? Continue to Login");
     const errors = this.renderErrorMessages();
     return (
       <div className='loggin-form-page'>
@@ -112,20 +102,17 @@ class SessionForm extends React.Component {
 
               </div>
               <div className="field-item">
-                <label className="username">UserName:
-                </label>
-                  <br/>
                   <input type="text"
+                    placeholder="Username"
                     value={this.state.user_name}
                     onChange={this.update("user_name")}
                     className='login-input'/>
               </div>
               <br/>
               <div className="field-item">
-                <label className="username">Password:
-                </label>
                   <br/>
                   <input type="password"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={this.update("password")}
                     className='login-input'/>
@@ -135,15 +122,12 @@ class SessionForm extends React.Component {
                   <input type="submit" value={this.props.formType}
                     className="submitButton"/>
                 </div>
+                <div className="switch-message">
+
+                </div>
             </form>
           </div>
         </section>
-        <script>
-          $(function() {
-              $(".inner-form").fadeIn(4000)
-          });
-        </script>
-
       </div>
     );
   }
