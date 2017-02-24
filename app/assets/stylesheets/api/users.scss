@@ -88,8 +88,8 @@
 }
 
 .background-photo-container img{
-  height: 600px;
-  width: auto;
+  // height: 600px;
+  // width: auto;
 }
 
 .image-element-class img{
@@ -142,7 +142,10 @@
 .nav-elements li{
   padding-left: 20px;
   padding-right: 20px;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .users-trips {
@@ -169,4 +172,34 @@
 .saved-trips-link:hover {
   color: #0099e5;
   line-decoration: underline;
+}
+
+@media screen and (max-width: 1070px) {
+  .background-photo-container {
+    height: 500px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .background-photo-container {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .background-photo-container {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .background-photo-container {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .background-photo-container {
+    height: 200px;
+  }
 }
