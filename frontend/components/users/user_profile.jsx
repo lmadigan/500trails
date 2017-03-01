@@ -142,6 +142,9 @@ class UserProfile extends React.Component {
                 <li>
                   <Link className="saved-trips-link" to={`/users/${this.props.user.id}/saved`}>SAVED TRIPS</Link>
                 </li>
+                <li>
+                  <Link className="saved-trips-link" to={`/users/${this.props.user.id}/map`}>MAP</Link>
+                </li>
               </ul>
             </nav>
           </div>

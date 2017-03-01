@@ -22,5 +22,7 @@ json.trips user.trips do |trip|
 
   json.images trip.images do |image|
     json.image_url image.image_url
+    json.lat image.lat
+    json.long image.long
   end
 end
