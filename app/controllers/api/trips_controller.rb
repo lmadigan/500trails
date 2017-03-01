@@ -3,7 +3,8 @@ class Api::TripsController < ApplicationController
   def create
     @trip = Trip.new(trip_params)
     if @trip.save
-      Image.create(trip_id: @trip.id, image_url: params[:trip][:image_url])
+      Image.create(trip_id: @trip.id, image_url: params[:trip][:image_url],
+       lat: params[:trip][:lat], long: params[:trip][:long])
       @user = User.find(current_user.id)
       render 'api/users/show'
     else

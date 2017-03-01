@@ -8,6 +8,7 @@ import TripIndexItemContainer from './trips/trip_index_item_container';
 import TripFormContainer from './trips/trip_form_container';
 import UserProfileContainer from './users/user_profile_container';
 import HomeFeed from './feed/home_feed_container';
+import MapContainer from './map/map';
 
 const Root = ({ store }) => (
   <Provider store={ store }>
@@ -22,6 +23,7 @@ const Root = ({ store }) => (
         <Route path="users/:userId" component={HomeFeed} />
         <Route path="users/:userId/trips" component={UserProfileContainer} />
         <Route path="users/:userId/saved" component={UserProfileContainer} />
+        <Route path="users/:userId/map" component={UserProfileContainer} />
       </Route>
     </Router>
   </Provider>

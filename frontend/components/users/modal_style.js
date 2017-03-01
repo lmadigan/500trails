@@ -12,13 +12,13 @@ export const customStyles = {
     position        : 'absolute',
     padding         : '0',
     margin          : '0 auto',
-     zIndex          : 2001,
-     opacity         : '0',
-     transition      : "opacity 0.5s",
-     maxWidth        : '1250px',
-     maxHeight       : '830px',
-     border          : 'none',
-     overflow        : 'hidden'
+    zIndex          : 2001,
+    opacity         : '0',
+    transition      : "opacity 0.5s",
+    maxWidth        : '1000px',
+    maxHeight       : '800px',
+    border          : 'none',
+    overflow        : 'scroll'
 
   }
 };

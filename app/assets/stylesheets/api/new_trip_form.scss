@@ -22,7 +22,7 @@
 
 .trip-form-photo-area {
   display: flex;
-  width:60%
+  width:80%
 }
 
 .photo-upload {
@@ -62,8 +62,6 @@
 
 
 .trip-form-input-area {
-  margin-right: 0px;
-margin-left: 40px;
 border-radius: 4px;
 padding: 20px;
 width: 40%;
@@ -72,9 +70,15 @@ flex-direction: column;
 justify-content: center;
 }
 
-.input-type {
-  padding-top: 20px;
+.inner-trip-form-area{
+  height: 333px;
   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.input-type {
   padding-bottom: 15px;
 }
 
@@ -82,7 +86,7 @@ justify-content: center;
 .create-trip-button {
     text-align: center;
     width: 100%;
-    max-width: 226px;
+    // max-width: 226px;
     background: #37DE69;
     padding-bottom: 7px;
     padding-top: 7px;
@@ -100,9 +104,9 @@ justify-content: center;
 
 .trip-label-input {
   width: 100%;
-  max-width: 226px;
-  box-shadow: 0px 1px 9px -1px rgba(0,0,0,0.75);
-  padding: 4px;
+  // box-shadow: 0px 1px 9px -1px rgba(0,0,0,0.75);
+  padding-top: 4px;
+  padding-bottom: 4px;
   border-radius: 3px;
   font-size: 12px;
 }
@@ -110,9 +114,10 @@ justify-content: center;
 .description-label-input {
   width: 100%;
   max-width: 226px;
-  box-shadow: 0px 1px 9px -1px rgba(0,0,0,0.75);
+  // box-shadow: 0px 1px 9px -1px rgba(0,0,0,0.75);
   border-radius: 3px;
-  padding: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-bottom: 60px;
   font-size: 12px;
 }
@@ -122,4 +127,8 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.new-pin-image-text {
+  padding-top: 10px;
 }

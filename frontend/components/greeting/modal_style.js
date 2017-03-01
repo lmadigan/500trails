@@ -16,7 +16,7 @@ export const customStyles = {
      zIndex          : 2001,
      opacity         : '0',
      transition      : "opacity 0.5s",
-     maxWidth        : '865px',
+     maxWidth        : '750px',
      maxHeight       : '570px',
      border          : 'none',
      overflow        : 'hidden'

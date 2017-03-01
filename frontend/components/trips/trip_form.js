@@ -3,6 +3,9 @@ import { withRouter } from 'react-router';
 import TripImages from './trip_image_form';
 import { merge } from 'lodash';
 import Modal from 'react-modal';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dtnwzbeum/upload';
 
 class TripForm extends React.Component {
   constructor(props) {
@@ -11,6 +14,8 @@ class TripForm extends React.Component {
       title: '',
       description: '',
       location: '',
+      lat: '',
+      lng: '',
       user_id: '',
       image_url: '',
       tripForm: false
@@ -19,6 +24,8 @@ class TripForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.uploadPhoto = this.uploadPhoto.bind(this);
     this.redirectToUserProfile = this.redirectToUserProfile.bind(this);
+    this.parseLat = this.parseLat.bind(this);
+    this.parseLong = this.parseLong.bind(this);
   }
 
   componentDidMount() {
@@ -37,7 +44,9 @@ class TripForm extends React.Component {
       description: this.state.description,
       location: this.state.location,
       user_id: this.props.currentUser.id,
-      image_url: this.state.image_url
+      image_url: this.state.image_url,
+      lat: this.state.lat,
+      long: this.state.lng
         }};
     this.props.createTrip(userTrip);
     this.props.closeModal();
@@ -67,65 +76,118 @@ class TripForm extends React.Component {
     }, 6000);
   }
 
+  parseLat(lat){
+    let res = lat.split(" ");
+    let seconds = res[3];
+    seconds = seconds.split(".");
+    let s = parseFloat(seconds[0]);
+    let min = parseFloat(res[2]);
+    let deg = parseFloat(res[0]);
+     min = min + (s / 60.0);
+     deg = deg + (min / 60.0);
+     if (res[4] === "S") {
+       deg = (0.0 - deg);
+     }
+    this.setState({
+      lat: deg
+    });
+  }
+
+  parseLong(long){
+    let res = long.split(" ");
+    let seconds = res[3];
+    seconds = seconds.split(".");
+    let s = parseFloat(seconds[0]);
+    let min = parseFloat(res[2]);
+    let deg = parseFloat(res[0]);
+     min = min + (s / 60.0);
+     deg = deg + (min / 60.0);
+     if (res[4] === "W") {
+       deg = (0.0 - deg);
+     }
+     console.log(res[4] === "W");
+     console.log(res[4]);
+     console.log(deg);
+    this.setState({
+      lng: deg
+    });
+  }
+
+  uploadPhoto(files) {
+    console.log(files);
+    this.handleImageUpload(files[0]);
+  }
 
 
-uploadPhoto(e) {
-    e.preventDefault();
-    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, results){
-      if(!error){
-        let url = results[0].url;
-        this.setState({image_url: url});
-        this.setState({tripForm: true});
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+    .field('upload_preset', CLOUDINARY_OPTIONS.upload_preset)
+    .field('file', file);
 
+    upload.end((err, response) => {
+      if (err) {
+        console.log(err);
       }
-    }.bind(this));
 
+      if (response.body.secure_url !== '') {
+        console.log("success");
+        console.log(this.state);
+        console.log(response);
+        this.setState({
+          image_url: response.body.secure_url});
+        this.setState({tripForm: true});
+        this.parseLat(response.body.image_metadata.GPSLatitude);
+        this.parseLong(response.body.image_metadata.GPSLongitude);
+      }
+    });
   }
 
   tripInfo() {
     return(
       <div className="trip-form-input-area">
-        <div className="input-type">
-          <button className="create-trip-button">Create Trip</button>
-        </div>
-        <br/>
-        <div className="input-type">
-          <label className="trip-label">
-            Title:
-          </label>
+        <div className="inner-trip-form-area">
+          <div className="input-type">
+            <button className="create-trip-button">Create Trip</button>
+          </div>
           <br/>
-          <input
-            className="trip-label-input"
-            type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
-          />
-        </div>
-        <div className="input-type">
-          <label className="trip-label">
-            Location:
-          </label>
-          <br/>
-          <input
-            className="trip-label-input"
-            type="text"
-            value={this.state.location}
-            placeholder="Where was the photo taken?"
-            onChange={this.update('location')}
+          <div className="input-type">
+            <label className="trip-label">
+              Title:
+            </label>
+            <br/>
+            <input
+              className="trip-label-input"
+              type="text"
+              value={this.state.title}
+              onChange={this.update('title')}
             />
-        </div>
-        <div className="input-type">
-          <label className="trip-label">
-            Description:
-          </label>
-          <br/>
-          <input
-            className="description-label-input"
-            type="text"
-            value={this.state.description}
-            placeholder="Tell us more about your trip!"
-            onChange={this.update('description')}
-            />
+          </div>
+          <div className="input-type">
+            <label className="trip-label">
+              Location:
+            </label>
+            <br/>
+            <input
+              className="trip-label-input"
+              type="text"
+              value={this.state.location}
+              placeholder="Where was the photo taken?"
+              onChange={this.update('location')}
+              />
+          </div>
+          <div className="input-type">
+            <label className="trip-label">
+              Description:
+            </label>
+            <br/>
+            <input
+              className="description-label-input"
+              type="text"
+              value={this.state.description}
+              placeholder="Tell us more about your trip!"
+              onChange={this.update('description')}
+              />
+          </div>
         </div>
       </div>
     );
@@ -145,11 +207,18 @@ uploadPhoto(e) {
     return (
       <div className="trip-form-photo-upload">
         <div className="photo-upload-form">
-          <button onClick={this.uploadPhoto}>Browse Photos</button>
+          <Dropzone
+            multiple={false}
+            accept="image/*"
+            onDrop={this.uploadPhoto.bind(this)}>
+
+          </Dropzone>
+          <p className="new-pin-image-text">Drop an image or click to select a file.</p>
         </div>
       </div>
     );
   }
+
 
 	render() {
     let showTripForm = (this.state.tripForm) ? this.tripInfo() : "";

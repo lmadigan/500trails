@@ -4,6 +4,7 @@ import { withRouter, Link } from 'react-router';
 import Modal from 'react-modal';
 import { customStyles } from './modal_style';
 import TripIndexItem from '../trips/trip_index_item';
+import MapContainer from '../map/map';
 import { merge } from 'lodash';
 
 class UserProfile extends React.Component {
@@ -13,6 +14,7 @@ class UserProfile extends React.Component {
     this._onModalClose = this._onModalClose.bind(this);
     this.showTrips = this.showTrips.bind(this);
     this.tripsToShow = this.tripsToShow.bind(this);
+    this.renderMap = this.renderMap.bind(this);
     this.state = {
       user: {},
       modalOpen: false,
@@ -61,6 +63,9 @@ class UserProfile extends React.Component {
 
   showTrips(trips) {
     let tripPhotos = "";
+    if (trips === "map") {
+      return this.renderMap() ;
+    }
 
     if (trips === "saved") {
       tripPhotos = this.props.user.liked_trips ;
@@ -83,13 +88,19 @@ class UserProfile extends React.Component {
           {userPics}
         </Masonry>
       </div>
+    );
+  }
 
+  renderMap(){
+    return (
+      <div className="masonry-container">
+        <MapContainer trips={this.props.user.trips} />
+      </div>
     );
   }
 
   render() {
     console.log(this.props);
-    console.log(this.state);
     let background = this.props.user.background_photo;
     if (!this.props.user.background_photo) {
       background = "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954059/500trails/homer_tunel_fiorland.jpg";
