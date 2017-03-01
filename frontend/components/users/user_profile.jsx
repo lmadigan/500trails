@@ -1,11 +1,12 @@
 import React from 'react';
-var Masonry = require('react-masonry-component');
 import { withRouter, Link } from 'react-router';
 import Modal from 'react-modal';
 import { customStyles } from './modal_style';
 import TripIndexItem from '../trips/trip_index_item';
 import MapContainer from '../map/map';
 import { merge } from 'lodash';
+var Masonry = require('react-masonry-component');
+var scrollToElement = require('scroll-to-element');
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class UserProfile extends React.Component {
     this.showTrips = this.showTrips.bind(this);
     this.tripsToShow = this.tripsToShow.bind(this);
     this.renderMap = this.renderMap.bind(this);
+    this.scroll = this.scroll.bind(this);
     this.state = {
       user: {},
       modalOpen: false,
@@ -91,6 +93,15 @@ class UserProfile extends React.Component {
     );
   }
 
+  scroll(element){
+    var elem = document.querySelector(`.${element}`);
+    debugger
+    scrollToElement(elem, {
+      offset: 0,
+      duration: 1500
+    });
+  }
+
   renderMap(){
     return (
       <div className="masonry-container">
@@ -139,13 +150,13 @@ class UserProfile extends React.Component {
             <nav className="user-nav">
               <ul className="nav-elements">
                 <li>
-                  <Link className="trips-link" to={`/users/${this.props.user.id}/trips`}>TRIPS</Link>
+                  <Link className="trips-link" to={`/users/${this.props.user.id}/trips`} onClick={()=> this.scroll("user-info")}>TRIPS</Link>
                 </li>
                 <li>
-                  <Link className="saved-trips-link" to={`/users/${this.props.user.id}/saved`}>SAVED TRIPS</Link>
+                  <Link className="saved-trips-link" to={`/users/${this.props.user.id}/saved`} onClick={()=> this.scroll("user-info")}>SAVED TRIPS</Link>
                 </li>
                 <li>
-                  <Link className="saved-trips-link" to={`/users/${this.props.user.id}/map`}>MAP</Link>
+                  <Link className="saved-trips-link" to={`/users/${this.props.user.id}/map`} onClick={()=> this.scroll("user-info")}>MAP</Link>
                 </li>
               </ul>
             </nav>
