@@ -1,12 +1,17 @@
 import React from 'react';
 import Modal from 'react-modal';
-import {customStyles} from '../greeting/modal_style';
+import {customStyles} from '../users/modal_style';
 import { Link } from 'react-router';
+import TripIndexItem from '../trips/trip_index_item';
+
+
 
 const _getCoordsObj = latLng => ({
   lat: latLng.lat(),
   lng: latLng.lng()
 });
+
+
 
 const _mapOptions = {
     center: {lat: 35, lng: -30},
@@ -130,7 +135,7 @@ addMarkers(trip, map, lat, long, i) {
        animation: google.maps.Animation.DROP,
        visibile: true
      });
-
+     let that = this;
     google.maps.event.addListener(marker, 'click', function() {
       that.setState({modalOpen: true, currentTrip: trip});
     });
@@ -146,21 +151,19 @@ addMarkers(trip, map, lat, long, i) {
     return (
       <div className="map" ref="map">Map
         <Modal
-           isOpen={this.state.modalOpen}
-           onRequestClose={this._onModalClose}
-           onAfterOpen={this.onModalOpen}
-           contentLabel="Modal"
-           style={customStyles}>
-           <div className="modal-div">
-             <div className="inner-modal-div">
-               <div className="modal-eth-name">
-                 <h1>Modal</h1>
-               </div>
-               <div>
-               </div>
-             </div>
-           </div>
-        </Modal>
+          isOpen={this.state.modalOpen}
+          onRequestClose={this._onModalClose}
+          onAfterOpen={this.onModalOpen}
+          contentLabel="Modal"
+          style={customStyles}>
+
+          <TripIndexItem
+            router ={this.props.router}
+              currentUser={this.props.currentUser}
+              user={this.props.user}
+              trip={this.state.currentTrip}
+              closeModal={this._onModalClose}/>
+          </Modal>
       </div>
     );
   }

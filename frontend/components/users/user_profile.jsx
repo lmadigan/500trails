@@ -12,6 +12,7 @@ class UserProfile extends React.Component {
     super(props);
     this._handleClick = this._handleClick.bind(this);
     this._onModalClose = this._onModalClose.bind(this);
+    this.onModalOpen = this.onModalOpen.bind(this);
     this.showTrips = this.showTrips.bind(this);
     this.tripsToShow = this.tripsToShow.bind(this);
     this.renderMap = this.renderMap.bind(this);
@@ -93,7 +94,9 @@ class UserProfile extends React.Component {
   renderMap(){
     return (
       <div className="masonry-container">
-        <MapContainer trips={this.props.user.trips} />
+        <MapContainer trips={this.props.user.trips}
+          currentUser={this.props.currentUser}
+          user={this.props.user}/>
       </div>
     );
   }
