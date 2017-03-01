@@ -115,8 +115,8 @@ componentWillMount() {
 
   setMarkers(map) {
     for(let i=0; i < this.props.trips.length; i++){
-      let lat = this.props.trips[i].lat;
-      let long = this.props.trips[i].long;
+      let lat = this.props.trips[i].images[0].lat;
+      let long = this.props.trips[i].images[0].long;
       this.addMarkers(this.props.trips[i], map, lat, long, i);
     }
   }

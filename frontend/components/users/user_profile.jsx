@@ -65,13 +65,12 @@ class UserProfile extends React.Component {
     let tripPhotos = "";
     if (trips === "map") {
       return this.renderMap() ;
+    } else if (trips === "trips"){
+      tripPhotos = this.props.user.trips ;
+    } else if (trips === "saved") {
+      tripPhotos = this.props.user.liked_trips ;
     }
 
-    if (trips === "saved") {
-      tripPhotos = this.props.user.liked_trips ;
-    } else {
-      tripPhotos = this.props.user.trips ;
-    }
     const userPics = tripPhotos.map(function(trip, idx){
       return (
         <div className="image-element-class" key={idx} >
