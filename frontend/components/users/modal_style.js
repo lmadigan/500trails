@@ -15,8 +15,10 @@ export const customStyles = {
     zIndex          : 2001,
     opacity         : '0',
     transition      : "opacity 0.5s",
-    maxWidth        : '1000px',
-    maxHeight       : '800px',
+    maxWidth        : '900px',
+    maxHeight       : '700px',
+    minWidth        : '400px',
+    minHeight       : '300px',
     border          : 'none',
     overflow        : 'scroll'
 

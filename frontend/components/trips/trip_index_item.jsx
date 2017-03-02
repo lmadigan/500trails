@@ -59,7 +59,6 @@ class TripIndexItem extends React.Component {
       }
 
       render() {
-        console.log(this.props);
         let image = (this.props.trip) ? this.props.trip.images[0].image_url : "";
         const imageButtons = this.imageButtonSection();
         return (

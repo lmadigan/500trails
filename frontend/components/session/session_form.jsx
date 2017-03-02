@@ -85,7 +85,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.formType);
     const sessionFormHeader = (this.props.formType === 'login' ?
       "Log In to 500trails" : "Join 500trails");
     const switchMessage = (this.props.formType === 'login' ?

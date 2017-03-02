@@ -15,8 +15,8 @@
 }
 
 .photo-container {
-  height: 100%;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -115,8 +115,9 @@
 }
 
 .user-navatar-item {
-  height: 80px;
+  min-height: 80px;
   width: auto;
+  height: auto;
   min-width: 80px;
   border-radius: 50%;
   background: transparent;
@@ -189,4 +190,14 @@
 
 .location-info {
   padding-right: 13px;
+}
+
+@media screen and (max-width: 771px) {
+  .trip-index-item-details {
+    visibility: hidden;
+    display: none;
+  }
+  .trip-index-item-photo-wrapper{
+    width: 100%;
+  }
 }

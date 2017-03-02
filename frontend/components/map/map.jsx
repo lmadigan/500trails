@@ -146,8 +146,6 @@ addMarkers(trip, map, lat, long, i) {
 
 
   render() {
-    console.log(this.props);
-
     return (
       <div className="map" ref="map">Map
         <Modal

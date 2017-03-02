@@ -95,7 +95,6 @@ class UserProfile extends React.Component {
 
   scroll(element){
     var elem = document.querySelector(`.${element}`);
-    debugger
     scrollToElement(elem, {
       offset: 0,
       duration: 1500

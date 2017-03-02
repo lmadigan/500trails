@@ -26,6 +26,7 @@ class TripForm extends React.Component {
     this.redirectToUserProfile = this.redirectToUserProfile.bind(this);
     this.parseLat = this.parseLat.bind(this);
     this.parseLong = this.parseLong.bind(this);
+    this.findLocation = this.findLocation.bind(this);
   }
 
   componentDidMount() {
@@ -38,7 +39,6 @@ class TripForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
     e.preventDefault();
     let userTrip = {trip: { title: this.state.title,
       description: this.state.description,
@@ -114,8 +114,27 @@ class TripForm extends React.Component {
   }
 
   uploadPhoto(files) {
-    console.log(files);
     this.handleImageUpload(files[0]);
+  }
+
+  findLocation() {
+    var geocoder = new google.maps.Geocoder;
+    let latlng = new google.maps.LatLng({lat: this.state.lat, lng: this.state.lng});
+    console.log(latlng);
+    let that = this;
+    geocoder.geocode({'location': latlng}, function(results, status) {
+      if (status === 'OK') {
+        if (results[1]) {
+          location = results[1].formatted_address;
+          that.setState({location: location})
+          console.log(location);
+        } else {
+          // alert('No results found');
+        }
+      } else {
+        // alert('Geocoder failed due to: ' + status);
+      }
+    });
   }
 
 
@@ -130,19 +149,20 @@ class TripForm extends React.Component {
       }
 
       if (response.body.secure_url !== '') {
-        console.log("success");
-        console.log(this.state);
         console.log(response);
         this.setState({
           image_url: response.body.secure_url});
         this.setState({tripForm: true});
         this.parseLat(response.body.image_metadata.GPSLatitude);
         this.parseLong(response.body.image_metadata.GPSLongitude);
+        console.log(this.state.lat);
+        this.findLocation();
       }
     });
   }
 
   tripInfo() {
+    let locationPlaceHolder = (this.state.location !== "") ? this.state.location : "Where was the photo taken?" ;
     return(
       <div className="trip-form-input-area">
         <div className="inner-trip-form-area">
@@ -171,7 +191,7 @@ class TripForm extends React.Component {
               className="trip-label-input"
               type="text"
               value={this.state.location}
-              placeholder="Where was the photo taken?"
+              placeholder={locationPlaceHolder}
               onChange={this.update('location')}
               />
           </div>
