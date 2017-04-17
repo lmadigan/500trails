@@ -48,9 +48,11 @@ class TripForm extends React.Component {
       lat: this.state.lat,
       long: this.state.lng
         }};
-    this.props.createTrip(userTrip);
-    this.props.closeModal();
-    this.redirectToUserProfile();
+    this.props.createTrip(userTrip)
+      .then(resp => this.props.closeModal(),
+        err => alert(err));
+    // this.props.closeModal();
+    // this.redirectToUserProfile();
   }
 
   update(property) {
@@ -177,6 +179,7 @@ class TripForm extends React.Component {
             <br/>
             <input
               className="trip-label-input"
+              required
               type="text"
               value={this.state.title}
               onChange={this.update('title')}
@@ -189,6 +192,7 @@ class TripForm extends React.Component {
             <br/>
             <input
               className="trip-label-input"
+              required
               type="text"
               value={this.state.location}
               placeholder={locationPlaceHolder}
@@ -202,6 +206,7 @@ class TripForm extends React.Component {
             <br/>
             <input
               className="description-label-input"
+              required
               type="text"
               value={this.state.description}
               placeholder="Tell us more about your trip!"

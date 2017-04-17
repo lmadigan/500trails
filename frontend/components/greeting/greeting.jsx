@@ -168,20 +168,3 @@ class Greeting extends React.Component {
 }
 
 export default withRouter(Greeting);
-
-
-// <button onClick={this._onModalClose}>CLOSE</button>
-
-
-
-
-
-// errors() {
-//   if (this.props.errors) {
-//     return (
-//       this.props.errors.map(error => {
-//         return (<li className="error" key={error}>{error}</li>);
-//       })
-//     );
-//   }
-// }
