@@ -19,7 +19,7 @@ export const customStyles = {
      maxWidth        : '750px',
      maxHeight       : '570px',
      border          : 'none',
-     overflow        : 'hidden'
+     overflow        : 'scroll'
 
   }
 };
