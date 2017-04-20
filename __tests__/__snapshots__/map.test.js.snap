@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Google Map Creates a map 1`] = `
+<div
+  className="loggin-form-page"
+>
+  <section
+    className="login-form-wrapper"
+  >
+    <section
+      className="login-error-bar"
+    />
+    <div
+      className="inner-form"
+    >
+      <form
+        className="login-form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="login-content"
+        >
+          <h1
+            className="login-header"
+          >
+            Join 500trails
+          </h1>
+        </div>
+        <div
+          className="field-item"
+        >
+          <input
+            className="login-input"
+            onChange={[Function]}
+            placeholder="Username"
+            type="text"
+            value=""
+          />
+        </div>
+        <br />
+        <div
+          className="field-item"
+        >
+          <br />
+          <input
+            className="login-input"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+        </div>
+        <br />
+        <div
+          className="field-item"
+        >
+          <input
+            className="submitButton"
+            type="submit"
+            value={undefined}
+          />
+        </div>
+        <div
+          className="switch-message"
+        />
+      </form>
+    </div>
+  </section>
+</div>
+`;
