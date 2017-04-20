@@ -93,6 +93,7 @@ class HomeFeed extends React.Component {
   }
 
   render () {
+    debugger
     let items = (this.props.feedTrips[0] === undefined) ? "" : this.itemsList();
     return (
       <section className="home-feed-container">

@@ -112,7 +112,6 @@ class UserProfile extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let background = this.props.user.background_photo;
     if (!this.props.user.background_photo) {
       background = "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484954059/500trails/homer_tunel_fiorland.jpg";
