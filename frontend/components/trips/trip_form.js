@@ -5,7 +5,7 @@ import { merge } from 'lodash';
 import Modal from 'react-modal';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dtnwzbeum/upload';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/lmadigan/upload';
 import PlacesAutocomplete, { geocodeByAddress } from 'react-places-autocomplete';
 
 class TripForm extends React.Component {
