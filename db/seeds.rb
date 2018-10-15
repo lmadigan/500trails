@@ -15,62 +15,62 @@ glimpse at natural beauty of Sicily. About a
 mile-long hike led to this hidden beach with crystal
 clear turquoise waters.", location:"Sicily, Italy",
 user_id: user1.id)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1487266141/capri_ue3a1i.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539563299/13475017_10154102046959845_7576252100101282718_o_copy.jpg",
 trip_id: 1, lat: 38.089438, long:12.803999)
 
 
-Trip.create(title: "Under the Bixby Bridge", description:"hi", location:"Big Sur, California",
+Trip.create(title: "Weekend Get Away", description:"1 mile hike up the side of the road to the most perfect little campsite.", location:"Big Sur, California",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608400/500trails/hlmbw0mrgpg-josh-felise.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539563298/IMG_0248_copy.jpg",
 trip_id: 2, lat: 36.371657, long: -121.902109)
 
 Trip.create(title: "Palancar Beach", description:"Palm Trees", location:"Cozumel, Mexico",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608189/500trails/cosumel.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539566038/caleb-george-67722-unsplash.jpg",
 trip_id: 3, lat: 20.389164, long: -87.021139)
 
-Trip.create(title: "Agua Calientes", description:"Hiking along this city. Trails leading to Machu Pichu", location:"Peru",
+Trip.create(title: "What's the probllama?!", description:"Hiking along this city. Trails leading to Machu Pichu", location:"Peru",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608189/500trails/cosumel.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539566156/davis-vargas-785102-unsplash.jpg",
 trip_id: 4, lat: -13.156345, long: -72.524973)
 
 Trip.create(title: "Arches National Park", description:"hi", location:"Moab, Utah",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608084/500trails/archesnationalpark.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539564639/ganapathy-kumar-405988-unsplash.jpg",
 trip_id: 5, lat: 38.732236, long: -109.592911)
 
 
 
-Trip.create(title: "Sarek National Park", description:"hi", location:"Jokkmokk Municipality, Lapland",
+Trip.create(title: "Hiking in Yosemite National Park", description:"The most amazing place! Can;t wait to make it back there. Hiking Half Dome was an incredible experience.", location:"Yosemite, California",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608083/500trails/sareknationalparksweden.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1535320877/samples/landscapes/nature-mountains.jpg",
 trip_id: 6, lat: 67.283201, long: 17.699861)
 
 
 Trip.create(title: "Salt Creek Falls", description:"Willamette National Forest", location:"Oakridge, Oregon",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608082/500trails/salt_creek_falls.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539564379/kyle-cesmat-99929-unsplash.jpg",
 trip_id: 7)
 
 Trip.create(title: "Point Dunes State Beach", description:"Shredding the Gnar", location:"Malibu, California",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608083/500trails/pointdumestatebeach.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539564201/hamish-duncan-559947-unsplash.jpg",
 trip_id: 8, lat: 36.656916, long: -121.824399)
 
 
 Trip.create(title: "Manhattan Beach", description:"Sunset Skim", location:"Manhattan Beach, California",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608081/500trails/manhattanhbeach.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539564096/marion-michele-444261-unsplash.jpg",
 trip_id: 9, lat: 33.894552, long: -118.418284)
 
-Trip.create(title: "Late night rides", description:"Zion Lodge", location:"Springdale, Utah",
+Trip.create(title: "Rocky Mountain National Park", description:"Emerald Lake trail", location:"Rocky Mountain National Park, Colorado",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608118/500trails/zionlodge_springdale.jpg",
-trip_id: 10, lat: 37.247666, long:-112.957335)
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539563310/IMG_0189_copy.jpg",
+trip_id: 10, )
 
 Trip.create(title: "Antelope Canyon", description:"In love with the red rocks", location:"Page, Arizona",
 user_id: 2)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484608084/500trails/antelope_canyon.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539563942/ashim-d-silva-162286-unsplash.jpg",
 trip_id: 11, lat: 36.862, long: -111.375156)
 
 Like.create(user_id: 2, trip_id: 12)
@@ -81,22 +81,22 @@ Like.create(user_id: 2, trip_id: 15)
 
 Trip.create(title: "Lake Michigian", description:"Blue Water", location:"Empire, Michigian",
 user_id: 1)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766314/michigan_esmtjl.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539566658/gus-moretta-739665-unsplash.jpg",
 trip_id: 12, lat: 44.809085, long: -86.067292)
 
 Trip.create(title: "ON THE ROAD AGAIN", description:"Road trip from Seatle to Alaska", location:"Valdes, Alaska",
 user_id: 1)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766322/valdes_alaska_blweys.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539566780/tobias-tullius-791006-unsplash.jpg",
 trip_id: 13, lat: 61.165419, long: -146.294714)
 
 Trip.create(title: "Mount Saint Elias", description:"Ski Trip", location:"Alaska",
 user_id: 1)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766343/mountain_alaska_ujoewc.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539566914/paxson-woelber-621855-unsplash.jpg",
 trip_id: 14, lat: 60.293264, long: -140.929005)
 
 Trip.create(title: "Stary Night", description:"Stars by the Coast", location:"Greece",
 user_id: 1)
-Image.create(image_url: "http://res.cloudinary.com/dtnwzbeum/image/upload/v1484766340/Greece_mceb93.jpg",
+Image.create(image_url: "https://res.cloudinary.com/lmadigan/image/upload/v1539567060/jeremy-thomas-98201-unsplash.jpg",
 trip_id: 15, lat: 38.791631, long: 23.382604)
 
 

@@ -124,6 +124,8 @@ class Greeting extends React.Component {
   }
 
   render () {
+    console.log("greeing");
+    console.log(this.state);
     let errors = this.props.errors ? this.renderErrorMessages() : "";
     let personalGreeting = "";
     if ( this.props.currentUser ) {
