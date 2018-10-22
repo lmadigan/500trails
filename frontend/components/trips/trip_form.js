@@ -172,7 +172,14 @@ class TripForm extends React.Component {
               Location:
             </label>
             <br/>
-            <PlacesAutocomplete inputProps={inputProps} />
+             <input
+               className="trip-label-input"
+               required
+               type="text"
+               value={this.state.location}
+               placeholder={locationPlaceHolder}
+               onChange={this.update('location')}
+               />
           </div>
           <div className="input-type">
             <label className="trip-label">
