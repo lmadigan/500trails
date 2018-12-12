@@ -49,7 +49,7 @@ class TripForm extends React.Component {
     let that = this;
     geocodeByAddress(this.state.location,  (err, latLng) => {
 
-        console.log(`Yay! Got latitude and longitude for ${this.state.location}`, latLng);
+        console.log(`latitude and longitude for ${this.state.location}`, latLng);
         // this.setState({lat: latLng.lat});
         // this.setState({long: latLng.lng});
         debugger

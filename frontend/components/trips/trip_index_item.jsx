@@ -45,11 +45,6 @@ class TripIndexItem extends React.Component {
               <button className="delete-button"
                 onClick={this.deleteTrip}>Delete Trip</button>
             </div>
-            // <div className="update-button-box">
-            //   <button className="updateButton"
-            //     onClick={this.updateTrip}>Delete Trip</button>
-            //
-            // </div>
           );
         } else {
           return (
